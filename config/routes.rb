@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :public do
   end
-  
+
   root :to =>"public/homes#top"
 
   # 顧客用
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
+
+  # ゲストログイン
+    post 'customers/guest_sign_in' => 'public/sessions#guest_sign_in'
 
   # 顧客用
   scope module: :public do
