@@ -35,13 +35,15 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
 
       t.timestamps null: false
       
-      # 名前,フリガナ
-      t.string :name, null: false
-      t.string :name_kana, null: false
+      # 姓,名,カナ姓,カナ名
+      t.string :last_name, null: false
+      t.string :first_name, null: false
+      t.string :last_name_kana, null: false
+      t.string :first_name_kana, null: false
       
-      #ニックネーム,紹介文
+      #ニックネーム,自己紹介文
       t.string :nickname, null: false
-      t.text :introduction, null: false
+      t.text :introduction
       
       # 退会フラグ
       # true=>退会した、false=>退会していない
