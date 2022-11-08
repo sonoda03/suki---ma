@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h4>新規会員登録画面</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
@@ -22,8 +22,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録する" %>
   </div>
 <% end %>
 
-<%= render "public/shared/links" %>
+<h5>既に登録済みの方</h5>
+<p><%= link_to "こちら", new_customer_session_path %>からログインしてください。</p>
+<%#= render "public/shared/links" %>
