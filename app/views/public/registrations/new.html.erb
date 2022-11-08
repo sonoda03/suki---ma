@@ -1,31 +1,92 @@
-<h4>新規会員登録画面</h4>
+<!--<h4>新規会員登録画面</h4>-->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<!--<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>-->
+<!--  <%= render "public/shared/error_messages", resource: resource %>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :email %><br />-->
+<!--    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>-->
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :password %>-->
+<!--    <% if @minimum_password_length %>-->
+<!--    <em>(<%= @minimum_password_length %> characters minimum)</em>-->
+<!--    <% end %><br />-->
+<!--    <%= f.password_field :password, autocomplete: "new-password" %>-->
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :password_confirmation %><br />-->
+<!--    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>-->
+<!--  </div>-->
+
+<!--  <div class="actions">-->
+<!--    <%= f.submit "登録する" %>-->
+<!--  </div>-->
+<!--<% end %>-->
+
+<!--<h5>既に登録済みの方</h5>-->
+<!--<p><%= link_to "こちら", new_customer_session_path %>からログインしてください。</p>-->
+<%#= render "public/shared/links" %>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class='pt-3 pl-5 ml-5'>
+      <h4 class='alart alert-secondary'>新規会員登録</h4>
+    </div>
+  </div>
+
+
+<%= form_with model: @customer, url: customer_registration_path  do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
+  <div class="row mt-5">
+    <div class="form-group col-12">
+      <%= f.label :"名前", class: "col-sm-2 control-label mr-5" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => "山田太郎" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group col-12">
+      <%= f.label :"フリガナ", class: "col-sm-2 control-label mr-5" %>
+      <%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana", :placeholder => "ヤマダタロウ" %>
+    </div>
+    
+    <div class="form-group col-12 text-nowrap">
+      <%= f.label :"ニックネーム", class: "col-sm-2 control-label mr-5" %>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", :placeholder => "（英数文字・ほかユーザに公開）", class: "col-3" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group col-12">
+      <%= f.label :"メールアドレス", class: "col-sm-2 control-label mr-5" %>
+      <%= f.text_field :email, autofocus: true, autocomplete: "email", :placeholder => "sample@example.com" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group col-12 text-nowrap">
+      <%= f.label :"パスワード６文字以上",class: "col-sm-2 control-label mr-5" %>
+      <% if @minimum_password_length %>
+      <em><% @minimum_password_length %></em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "登録する" %>
+    <div class="form-group col-12">
+      <%= f.label :"パスワード(確認用)",class: "col-sm-2 control-label mr-5" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="actions col-7 text-center">
+      <%= f.submit "新規会員登録", class: 'btn btn-sm btn-success control-submit mr-5' %>
+    </div>
   </div>
 <% end %>
 
-<h5>既に登録済みの方</h5>
-<p><%= link_to "こちら", new_customer_session_path %>からログインしてください。</p>
-<%#= render "public/shared/links" %>
+    <div class='row ml-5 mt-5'>
+      <h4 class="alert-secondary">既に登録済みの方<h4>
+    </div>
+
+    <div class="row">
+     <div class="col-4 offset-1">
+       <%= link_to "こちら", new_customer_session_path %> からログインしてください。
+     </div>
+    </div>
