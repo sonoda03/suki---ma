@@ -9,7 +9,14 @@
 		</div>
 	</div>
 	<div class='row'>
-		<div class='col-4'></div>
+		<div class='col-4'>
+			<p>プロフィール画像（ほかユーザに公開）</p>
+			  <% if @customer.profile_image.attached? %>
+			    <%= image_tag @customer.profile_image, size: "200x200" %>
+			  <% else %>
+			    <%= image_tag 'no_image_square', size: "200x200" %>
+			  <% end %>
+		</div>
 		<div class='col-7'>
 			<table class="table table-borderless ">
 				<tr>
