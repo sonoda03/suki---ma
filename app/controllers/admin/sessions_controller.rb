@@ -27,7 +27,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   # 管理者ログイン後
   def after_sign_in_path_for(resource)
-    root_path
+    admin_customers_path
   end
 
   # 管理者ログアウト後
