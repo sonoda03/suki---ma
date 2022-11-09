@@ -55,6 +55,14 @@
 					<td colspan="2"></td>
 				</tr>
 				<tr>
+          <td>会員ステータス</td>
+           <% if @customer.is_deleted? %>
+              <td class="text-black-50">退会</td>
+           <% else %>
+              <td class="text-success">有効</td>
+           <% end %>
+        </tr>
+				<tr>
 					<td><%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-success" %></td>
 				</tr>
 			</table>
