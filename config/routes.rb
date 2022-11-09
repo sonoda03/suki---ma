@@ -9,12 +9,14 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
-
-  # ゲストログイン
+  devise_scope :customer do
+    # ゲストログイン
     post 'customers/guest_sign_in' => 'public/sessions#guest_sign_in'
+  end
 
   # 顧客用
   scope module: :public do
+
     # 顧客側のマイページ,登録情報編集&更新
     get 'customers/my_page' => 'customers#show'
     get 'customers/information/edit' => 'customers#edit'

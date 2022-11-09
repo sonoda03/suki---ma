@@ -1,0 +1,63 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-6'>
+			<div class="d-flex bd-highlight mb-3 mt-3 ">
+				<h5 class="p-2 bd-highlight">
+					<%= @customer.nickname %>さんの会員情報
+				</h5>
+			</div>
+		</div>
+	</div>
+	<%= flash[:notice] %>
+	<div class='row'>
+		<div class='col-4'>
+			<p>プロフィール画像（ほかユーザに公開）</p>
+			  <% if @customer.profile_image.attached? %>
+			    <%= image_tag @customer.profile_image, size: "200x200" %>
+			  <% else %>
+			    <%= image_tag 'no_image_square', size: "200x200" %>
+			  <% end %>
+		</div>
+		<div class='col-8'>
+			<table class="table table-borderless ">
+				<tr>
+					<td>名前</td>
+					<td>(姓) <%= @customer.first_name %></td>
+					<td>(名) <%= @customer.last_name %></td>
+				</tr>
+				<tr>
+					<td>フリガナ</td>
+					<td>(セイ) <%= @customer.first_name_kana %></td>
+					<td>(メイ) <%= @customer.last_name_kana %></td>
+				</tr>
+				<tr>
+					<td>メールアドレス</td>
+					<td colspan="2"><%= @customer.email %></td>
+				</tr>
+				<tr>
+					<td>
+						<p>ニックネーム<br>
+							(ほかユーザに公開)
+						</p>
+					</td>
+					<td colspan="2"><%= @customer.nickname %></td>
+				</tr>
+				<tr>
+					<td>
+					<p>introduction<br>
+					  (ほかユーザに公開)
+					</p>
+					</td>
+					<td colspan="2"><%= @customer.introduction %></td>
+				</tr>
+				<tr>
+					<td>お気に入り数</td>
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<td><%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-success" %></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
