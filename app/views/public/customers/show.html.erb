@@ -1,2 +1,50 @@
-<h1>Public::Customers#show</h1>
-<p>Find me in app/views/public/customers/show.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-6'>
+      <div class="d-flex bd-highlight mb-3 mt-3 ">
+        <h5 class="p-2 bd-highlight">
+          <span class="py-2 px-4 bg-ligh alert-secondary"><%= @customer.nickname %>さんのマイページ</span>
+        </h5>
+　　　</div>
+	<table class="table table-borderless ">
+			<tr>
+				<td>名前</td>
+				<td>(姓) <%= @customer.first_name %></td>
+				<td>(名) <%= @customer.last_name %></td>
+			</tr>
+			<tr>
+				<td>フリガナ</td>
+				<td>(セイ) <%= @customer.first_name_kana %></td>
+				<td>(メイ) <%= @customer.last_name_kana %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td colspan="2"><%= @customer.email %></td>
+			</tr>
+			<tr>
+				<td>
+				  <p>ニックネーム<br>
+				    (ほかユーザに公開)
+				  </p>
+				</td>
+				<td colspan="2"><%= @customer.nickname %></td>
+			</tr>
+			<tr>
+			  <td>
+  				<p>introduction<br>
+  				    (ほかユーザに公開)
+  				</p>
+				</td>
+				<td colspan="2"><%= @customer.introduction %></td>
+			</tr>
+			<tr>
+				<td>お気に入り数</td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<td><%= link_to "編集", customers_information_edit_path(@customer), class: "btn btn-success" %></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
