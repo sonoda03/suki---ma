@@ -13,7 +13,10 @@
 
   <body>
     <!--ヘッダー完成下記リンク後削除-->
-    <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
+    <div><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %></div>
+
+    <!--ヘッダー完成下記リンク後削除-->
+    <div><%= link_to '管理者ログアウト', destroy_admin_session_path, method: :delete %></div>
 
     <%= yield %>
   </body>
