@@ -15,6 +15,14 @@ Rails.application.routes.draw do
     # ゲストログイン
     post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
   end
+  
+  # 会員用
+  scope module: :public do
+    resources :users, only: [:show, :edit, :update] do
+      get '/unsubscribe' => 'users#unsubscribe'
+      patch '/withdraw' => 'users#withdraw'
+    end
+  end
 
   # 管理者用
   # URL /admin/sign_in
