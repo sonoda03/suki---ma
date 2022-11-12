@@ -10,7 +10,7 @@
   </div>
   <div class="container mx-5">
     <div class="col-12">
-      <%= form_with url: customers_infomation_path(@customer), model: @customer, local: true do |customer| %>
+      <%= form_with url: customer_infomation_path(@customer), model: @customer, local: true do |customer| %>
         <div class="image_field">
           <%= customer.label "プロフィール画像", class: "col-sm-2 control-label"%>
           <%= customer.file_field :profile_image,  accept:'image/*', class: "mb-3" %>

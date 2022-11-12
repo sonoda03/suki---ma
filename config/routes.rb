@@ -18,12 +18,20 @@ Rails.application.routes.draw do
   scope module: :public do
 
     # 顧客側のマイページ,登録情報編集&更新
-    get 'customers/my_page' => 'customers#show'
-    get 'customers/information/edit' => 'customers#edit'
-    patch 'customers/infomation' => 'customers#update'
-    # 顧客側の退会確認画面,退会処理
-    get '/customers/unsubscribe' => 'customers#unsubscribe'
-    patch '/customers/withdraw' => 'customers#withdraw'
+    resources :customers, only: [:show] do
+      get '/account' => 'customers#account'
+      get '/information/edit' => 'customers#edit'
+      patch '/infomation' => 'customers#update'
+      # 顧客側の退会確認画面,退会処理
+      get '/unsubscribe' => 'customers#unsubscribe'
+      patch '/withdraw' => 'customers#withdraw'
+    end
+    # get 'customers/my_page' => 'customers#show'
+    # get 'customers/information/edit' => 'customers#edit'
+    # patch 'customers/infomation' => 'customers#update'
+    # # 顧客側の退会確認画面,退会処理
+    # get '/customers/unsubscribe' => 'customers#unsubscribe'
+    # patch '/customers/withdraw' => 'customers#withdraw'
   end
 
   # 管理者用
