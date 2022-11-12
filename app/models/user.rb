@@ -17,4 +17,9 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+
+  # 姓(last_name)と名(irst_name)を合わせて表示
+  def full_name
+    self.last_name + self.first_name
+  end
 end
