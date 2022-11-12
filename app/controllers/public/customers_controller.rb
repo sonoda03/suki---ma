@@ -1,6 +1,11 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
 
+  def show
+    @customer = Customer.find(params[:id])
+    # @customer = current_customer
+  end
+
   def account
     # @customer = Customer.find(params[:customer_id])
     @customer = current_customer
