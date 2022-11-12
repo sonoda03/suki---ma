@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     # ゲストログイン
     post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
   end
-  
+
   # 会員用
   scope module: :public do
     resources :users, only: [:show, :edit, :update] do
@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   namespace :admin do
     # resources :users, only: [:index, :show, :edit, :update]
     resources :genres
+    resources :users, only: [:index, :show, :edit, :update]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
