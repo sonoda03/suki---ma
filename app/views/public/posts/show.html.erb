@@ -46,7 +46,7 @@
 	        </tr>
 					<tr>
 						<td>お気に入り</td>
-						<td>♡5</td>
+						<td><%= render "public/favorites/btn", post: @post %></td>
 					</tr>
 					<% if @post.user == current_user %>
 					<tr>
