@@ -1,0 +1,24 @@
+<table>
+  <tbody>
+      <% post.post_comments.each do |post_comment| %>
+      <thead>
+        <th>
+          <%= link_to user_path(post_comment.user) do %>
+            <%= post_comment.user.nickname %>
+          <% end %>
+          さん
+        </th>
+      </thead>
+      <tbody>
+        <td></td>
+        <td><%= post_comment.comment %></td>
+        <td>
+          <!--のちに削除できるのは管理者のみにする-->
+          <% if post_comment.user == current_user %>
+            <%= link_to "Destroy", post_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull-right ml-3" %>
+          <% end %>
+        </td>
+      </tbody>
+      <% end %>
+  </tbody>
+</table>
