@@ -1,8 +1,8 @@
-div class='container'>
+<div class='container mt-5'>
   <div class='row pt-4'>
     <div class='col-md-12'>
-      <h5><%= @user.nickname %>さんの投稿一覧<span class='item_count'>(全<%#= @user.posts.count %>件)</span></h5>
-        <%#= render 'public/posts/index', posts: @posts %>
+      <h5><%= @user.nickname %> さんの投稿一覧<span class='item_count'>( 全 <%= @user.posts.count %> 件 )</span></h5>
+        <%= render 'public/posts/index', posts: @posts %>
     </div>
   </div>
 </div>

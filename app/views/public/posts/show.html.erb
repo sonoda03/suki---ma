@@ -35,6 +35,14 @@
           <td>ジャンル</td>
         　<td><%= @post.genre.name %></td>
         </tr>
+        <tr>
+        	<td></td>
+        	<td>
+        		<% @post_tags.each do |tag| %>
+  						<%= tag.name %><%="(#{tag.posts.count})," %>
+  					<% end %>
+        	</td>
+        </tr>
 				<tr>
 					<td>お気に入り</td>
 					<td>♡5</td>
