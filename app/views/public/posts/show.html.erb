@@ -46,8 +46,8 @@
 	        	</td>
 	        </tr>
 					<tr>
-						<td>お気に入り</td>
-						<td><%= render "public/favorites/btn", post: @post %></td>
+						<td>お気に入り:<%= render "public/favorites/btn", post: @post %></td>
+						<td>コメント数：<%= @post.post_comments.count %></td>
 					</tr>
 					<% if @post.user == current_user %>
 					<tr>

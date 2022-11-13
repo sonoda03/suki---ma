@@ -52,7 +52,11 @@
 				</tr>
 				<tr>
 					<td>お気に入り数</td>
-					<td colspan="2"></td>
+					<td colspan="2"><%= @user.favorites.count %></td>
+				</tr>
+				<tr>
+					<td>投稿数</td>
+					<td colspan="2"><%= @user.posts.count %></td>
 				</tr>
 				<tr>
           <td>会員ステータス</td>

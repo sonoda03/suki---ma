@@ -9,8 +9,7 @@
       <p><%= post.title %></p>
       <p>ジャンル：<%= post.genre.name %></p>
       <p><%= post.tags.map(&:name).join(', ') %></p>
-      <p><%= render "public/favorites/btn", post: post %></p>
-      <p>コメント数：<%#= post. %></p>
+      <p><%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
     </div>
   <% end %>
 </div>
