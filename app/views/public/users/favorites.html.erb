@@ -6,7 +6,7 @@
       <%#= render 'users/info', user: @post.user %>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <h5><%= @user.nickname %>さんのお気に入り一覧 <span class='item_count'>(全<%#= Post.count %>件)</span></h5>
+      <h5><%= @user.nickname %>さんのお気に入り一覧 <span class='item_count'>(全<%= @favorite_posts.count %>件)</span></h5>
         <%= render 'public/posts/index', posts: @favorite_posts %>
 	  </div>
   </div>
