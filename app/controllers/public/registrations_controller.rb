@@ -64,17 +64,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
+  # 新規会員登録後
   def after_sign_up_path_for(resource)
-    # 全会員投稿一覧画面作成後変更予定
-    # 全会員投稿一覧画面_path
-    # super(resource)
-    # user_path(current_customer.id)
-    root_path
-  end
-
-  def after_update_path_for(resource)
-    # マイページ作成後変更予定
-    # mypage_path
-    root_path
+   posts _path
   end
 end
