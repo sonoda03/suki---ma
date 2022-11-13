@@ -1,0 +1,8 @@
+<div class='container  mt-5'>
+  <div class='row pt-4'>
+    <div class='col-md-12'>
+      <h5>投稿一覧 <span class='item_count'>(全<%= Post.count %>件)</span></h5>
+        <%= render 'index', posts: @posts %>
+    </div>
+  </div>
+</div>

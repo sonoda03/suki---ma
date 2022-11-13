@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get '/unsubscribe' => 'users#unsubscribe'
       patch '/withdraw' => 'users#withdraw'
     end
+    resources :posts
   end
 
   # 管理者用
