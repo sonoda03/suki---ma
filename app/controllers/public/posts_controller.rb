@@ -2,11 +2,13 @@ class Public::PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @tag_list = Tag.all
   end
 
 
   def show
     @post = Post.find(params[:id])
+    @post_tags = @post.tags
   end
 
   def new
@@ -16,7 +18,9 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    tag_list = params[:post][:name].split(',')
     if @post.save
+      @post.save_tag(tag_list)
       flash[:notice] = "投稿しました。"
       redirect_to post_path(@post)
     else
