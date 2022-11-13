@@ -1,10 +1,11 @@
 <div class='container mt-5'>
-	<div class='row pt-3'>
-		<div class='col-md-3'>
+  <div class='row pt-3'>
+  	<div class='col-md-3'>
       <h2>User info</h2>
+      <p><%=link_to"お気に入り投稿一覧", favorites_user_path(@post.user) %></p>
       <%#= render 'users/info', user: @post.user %>
-    </div>
-		<div class='col-md-8 offset-md-1'>
+	    </div>
+	    <div class='col-md-8 offset-md-1'>
 			<div class="d-flex bd-highlight mb-3 mt-3 ">
 			  <h5 class="p-2 bd-highlight">
 					<%= @post.user.nickname %>さんの投稿詳細
@@ -59,5 +60,5 @@
 			<%= render "public/post_comments/form", post: @post, post_comment: @post_comment %>
 			<%= render "public/post_comments/index", post: @post %>
 		</div>
-	</div>
+</div>
 </div>

@@ -4,7 +4,7 @@ class Public::PostsController < ApplicationController
     @posts = Post.all
     @tag_list = Tag.all
   end
-
+  
 
   def show
     @post = Post.find(params[:id])
