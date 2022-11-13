@@ -4,8 +4,14 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
   has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   has_one_attached :post_image
+
+  # ログイン中のユーザーがその投稿にお気に入りをしているか判断
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
   def save_tag(sent_tags)
   # タグが存在していれば、タグの名前を配列として全て取得
