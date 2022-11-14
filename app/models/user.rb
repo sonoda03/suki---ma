@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  def get_profile_image
+    (profile_image.attached?) ? profile_image : 'no_image_square'
+  end
+
   def self.guest
     find_or_create_by!(email: 'guest0123@example.com') do |user|
       user.last_name = '閲覧'

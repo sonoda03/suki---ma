@@ -1,6 +1,12 @@
 <div class='container mt-5'>
-  <div class='row pt-4'>
-    <div class='col-md-12'>
+  <div class='row pt-3'>
+  	<div class='col-md-3'>
+      <div style="text-align:center;">
+        <h2>User info</h2>
+      </div>
+      <%= render 'public/users/info', user: @user %>
+	  </div>
+	  <div class='col-md-8 offset-md-1'>
       <h5><%= @user.nickname %> さんの投稿一覧<span class='item_count'>( 全 <%= @user.posts.count %> 件 )</span></h5>
         <%= render 'public/posts/index', posts: @posts %>
     </div>

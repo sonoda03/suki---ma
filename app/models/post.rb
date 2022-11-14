@@ -8,6 +8,10 @@ class Post < ApplicationRecord
 
   has_one_attached :post_image
 
+  def get_post_image
+    (post_image.attached?) ? post_image : 'no_image_square'
+  end
+
   # ログイン中のユーザーがその投稿にお気に入りをしているか判断
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
