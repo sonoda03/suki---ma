@@ -1,24 +1,46 @@
-<table class="table table-borderless">
-  <tr>
-    <td align=center>
-    <%= image_tag user.get_profile_image, size:'120x120' %>
-    </td>
-  </tr>
-  <tr>
-	  <td align=center><strong><%= user.nickname %></strong> さん</td>
-  </tr>
-  <tr>
-	  <td>＜自己紹介＞<br>
-	    <%= user.introduction %>
-	  </td>
-  </tr>
-</table>
+<% if user_signed_in? %>
+  <table class="table table-borderless">
+    <tr>
+      <td align=center>
+      <%= image_tag user.get_profile_image, size:'120x120' %>
+      </td>
+    </tr>
+    <tr>
+  	  <td align=center><strong><%= user.nickname %></strong> さん</td>
+    </tr>
+    <tr>
+  	  <td>＜自己紹介＞<br>
+  	    <%= user.introduction %>
+  	  </td>
+    </tr>
+  </table>
 
-<div class='row'>
-  <%=link_to favorites_user_path(user), class: "btn btn-outline-secondary btn-block favorites_user_#{user.id}" do %>
-    <i class="fab fa-gratipay"></i>　お気に入り一覧
-  <% end %>
-  <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
-    <i class="fas fa-user-cog"></i>　会員情報編集
-  <% end %>
-</div>
+  <div class='row'>
+    <%=link_to favorites_user_path(user), class: "btn btn-outline-secondary btn-block favorites_user_#{user.id}" do %>
+      <i class="fab fa-gratipay"></i>　お気に入り一覧
+    <% end %>
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+      <i class="fas fa-user-cog"></i>　会員情報編集
+    <% end %>
+  </div>
+<% else %>
+  <div>
+  	  <p align=center>
+  	    <img src="/assets/no_image_square.jpg" , width="120" height="120">
+      </p>
+      <p align=center>
+  	    <strong>
+  	      会員登録または<br>
+  	      ログインしてください。
+  	    </strong>
+  	  </p>
+  </div>
+  <div class='row'>
+    <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fab fa-gratipay"></i>　お気に入り一覧
+    <% end %>
+    <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>　会員情報編集
+    <% end %>
+  </div>
+<% end %>

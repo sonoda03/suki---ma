@@ -6,6 +6,10 @@
         <% if admin_signed_in? %>
           <% if request.fullpath.include? "/admin" %>
             <li class='mx-1'>
+            <%=  link_to posts_path,class: 'btn btn-outline-light' do %>全投稿一覧<% end %>
+          </li>
+          <li class='mx-1'>
+            <li class='mx-1'>
               <%= link_to admin_users_path,class: 'btn btn-outline-light' do %>会員一覧<% end %>
             </li>
             <li class='mx-1'>
