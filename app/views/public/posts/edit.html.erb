@@ -1,10 +1,10 @@
 <div class='container mt-5'>
   <div class='row pt-3'>
   	<div class='col-md-3'>
-      <div style="text-align:center;">
-        <h2>User info</h2>
+  	  <div>
+        <h2 style="text-align:center;">User info</h2>
+        <%= render 'public/users/info', user: current_user %>
       </div>
-      <%= render 'public/users/info', user: current_user %>
 	  </div>
     <%= flash[:notice] %>
     <div class='col-md-8 offset-md-1 mt-3'>
@@ -46,7 +46,7 @@
             </tr>
             <tr>
               <td>
-                <%= form.label "投稿ジャンル"%>
+                <%= form.label "ジャンル", class: "mr-3" %>
               </td>
               <td>
                 <%= form.collection_select :genre_id, Genre.all, :id, :name,
@@ -55,16 +55,16 @@
             </tr>
             <tr>
               <td>
-                <%= form.label "タグ ( , で区切るとタグを複数登録可能)" %>
+                <%= form.label "タグ" %>
               </td>
               <td>
-                <%= form.text_field :name,value: @tag_list, class: "form-control"%>
+                <%= form.text_field :name,value: @tag_list, class: "form-control", placeholder: '  , で区切るとタグを複数登録可能'%>
               </td>
             </tr>
             <tr>
               <td></td>
               <td align="center">
-                <%= form.submit '変更を保存', class: "btn-success btn-lg" %>
+                <%= form.submit '変更を保存', class: "btn-success btn-lg mt-3" %>
               </td>
             </tr>
           </table>

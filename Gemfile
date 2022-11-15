@@ -61,3 +61,6 @@ gem 'devise'
 
 # 投稿したURLをリンクにする
 gem 'rinku'
+
+# 検索機能
+gem 'ransack'
