@@ -1,4 +1,6 @@
 class Public::PostsController < ApplicationController
+  # 検索
+  before_action :set_q, only: [:new, :index, :show, :search]
 
   def index
     @genres = Genre.all
@@ -65,7 +67,19 @@ class Public::PostsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  # 検索
+  def search
+    @results = @q.result
+    @genres = Genre.all
+  end
+
   private
+
+  # 検索
+  def set_q
+    @q = Post.ransack(params[:q])
+  end
+
 
   def post_params
     params.require(:post).permit(:user_id, :genre_id, :title, :introduction, :post_image, :url)
