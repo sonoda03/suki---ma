@@ -59,8 +59,18 @@
 						<td><%= link_to "編集", edit_post_path(@post), class: "btn btn-success" %></td>
 						<td><%= link_to "削除", post_path(@post), method: :delete, class: "btn btn-danger", data: {confirm: "この投稿を削除しますか？"} %></td>
 					</tr>
+					<% elsif admin_signed_in? %>
+					<tr>
+						<td colspan="2" align="right"><%= link_to "管理者削除", post_path(@post), method: :delete, class: "btn btn-danger", data: {confirm: "この投稿を削除しますか？"} %></td>
+					</tr>
 					<% end %>
 					</table>
+			</div>
+			<div>
+				<p>
+					<i class="far fa-comments"></i>
+					<strong>みんなのコメント</strong>
+				</p>
 			</div>
 			<%= render "public/post_comments/form", post: @post, post_comment: @post_comment %>
 			<%= render "public/post_comments/index", post: @post %>
