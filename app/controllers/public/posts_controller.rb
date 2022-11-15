@@ -1,8 +1,13 @@
 class Public::PostsController < ApplicationController
 
   def index
-    @posts = Post.all
-    @tag_list = Tag.all
+    @genres = Genre.all
+    if params[:genre_id]
+      @genre = Genre.find(params[:genre_id])
+      @posts = @genre.posts
+    else
+      @posts = Post.all
+    end
   end
 
 
@@ -10,6 +15,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_tags = @post.tags
     @post_comment = PostComment.new
+    @genres = Genre.all
   end
 
   def new

@@ -4,8 +4,11 @@
       <div style="text-align:center;">
         <h2>User info</h2>
       </div>
-      <%= render 'public/users/info', user: @post.user %>
-	  </div>
+      <div>
+	      <%= render 'public/users/info', user: @post.user %>
+		  </div>
+		  	<%= render 'admin/genres/genre_sidebar', genres: @genres %>
+	  	</div>
 	  <div class='col-md-8 offset-md-1'>
 			<div class="d-flex bd-highlight mb-3 mt-3 ">
 			  <h5 class="p-2 bd-highlight">

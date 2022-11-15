@@ -4,7 +4,10 @@
   	  <div style="text-align:center;">
         <h2>User info</h2>
       </div>
-      <%= render 'public/users/info', user: current_user %>
+      <div>
+        <%= render 'public/users/info', user: current_user %>
+      </div>
+        <%= render 'admin/genres/genre_sidebar', genres: @genres %>
 	  </div>
 	  <div class='col-md-8 offset-md-1 mt-3'>
       <h4><strong>全会員投稿一覧 (全<%= Post.count %>件)</strong></h4>
