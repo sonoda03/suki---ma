@@ -161,6 +161,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rinku (2.0.6)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -232,6 +233,7 @@ DEPENDENCIES
   net-smtp
   puma (~> 5.0)
   rails (~> 6.1.7)
+  rinku
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
