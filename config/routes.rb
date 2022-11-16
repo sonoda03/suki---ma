@@ -28,9 +28,11 @@ Rails.application.routes.draw do
     resources :posts do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
-      # 検索
       collection do
+        # 投稿詳細検索
         get 'search'
+        # 投稿タグ検索
+        get 'search_tag'
       end
     end
   end

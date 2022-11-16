@@ -1,20 +1,24 @@
-<div>
   <%= search_form_for q, url: search_posts_path do |f| %>
     <table>
       <tr>
-        <td><%= f.label :title_cont, 'タイトル：' %></td>
-        <td><%= f.search_field :title_cont %></td>
+        <td class="col-xs-5"><%= f.label :title_cont, 'Title：'%></td>
+        <td><%= f.search_field :title_cont%></td>
       </tr>
       <tr>
-        <td><%= f.label :tags_name_cont, 'タグ：' %></td>
+        <td><%= f.label :tags_name_cont, 'Tag：' %></td>
         <td><%= f.search_field :tags_name_cont %></td>
       </tr>
       <tr>
-        <td><%= f.label :genre_id_eq,"ジャンル："%></td>
+        <td><%= f.label :genre_id_eq,"Genre："%></td>
         <td><%= f.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name, :prompt => "--選択してください--") %></td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+          <%= button_tag type: "submit", class: "btn  btn-outline-secondary mt-2 ml-5" do %>
+            <i class="fas fa-search"></i> 検索
+          <% end %>
+        </td>
+      </tr>
     </table>
-
-    <%= f.submit '検索' %>
   <% end %>
-</div>
