@@ -1,0 +1,79 @@
+<div class='container mt-5'>
+  <div class='row pt-3'>
+  	<div class='col-md-3'>
+  	  <div>
+        <h2 style="text-align:center;">User info</h2>
+        <%= render 'public/users/info', user: @post.user %>
+      </div>
+      <div class='mt-5'>
+        <h2 style="text-align:center;">投稿検索</h2>
+        <%= render 'form', q: @q %>
+      </div>
+	  </div>
+	  <div class='col-md-8 offset-md-1'>
+			<div class="d-flex bd-highlight mb-3 mt-3 ">
+			  <h5 class="p-2 bd-highlight">
+					<%= @post.user.nickname %>さんの投稿詳細
+				</h5>
+			</div>
+			<p>紹介画像</p>
+			<div>
+			<% if @post.post_image.attached? %>
+			    <%= image_tag @post.post_image, size: "200x200" %>
+			  <% else %>
+			    <%= image_tag 'no_image_square', size: "200x200" %>
+			  <% end %>
+			</div>
+			<div>
+				<table class="table table-borderless ">
+					<tr>
+						<td>タイトル</td>
+						<td><%= @post.title %></td>
+					</tr>
+					<tr>
+						<td>投稿紹介</td>
+						<td><%= @post.introduction %></td>
+					</tr>
+					<tr>
+						<td>URL(任意)</td>
+						<td colspan="2"><%= Rinku.auto_link(@post.url, :all, 'target="_blank"').html_safe %></td>
+					</tr>
+					<tr>
+	          <td>ジャンル</td>
+	        　<td><%= @post.genre.name %></td>
+	        </tr>
+	        <tr>
+	        	<td></td>
+	        	<td>
+							<% @post_tags.each do |tag| %>
+							 # <%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %><%="(#{tag.posts.count})" %>
+	  					<% end %>
+	        	</td>
+	        </tr>
+					<tr>
+						<td>お気に入り:<%= render "public/favorites/btn", post: @post %></td>
+						<td>コメント数：<%= @post.post_comments.count %></td>
+					</tr>
+					<% if @post.user == current_user %>
+					<tr>
+						<td><%= link_to "編集", edit_post_path(@post), class: "btn btn-success" %></td>
+						<td><%= link_to "削除", post_path(@post), method: :delete, class: "btn btn-danger", data: {confirm: "この投稿を削除しますか？"} %></td>
+					</tr>
+					<% elsif admin_signed_in? %>
+					<tr>
+						<td colspan="2" align="right"><%= link_to "管理者削除", post_path(@post), method: :delete, class: "btn btn-danger", data: {confirm: "この投稿を削除しますか？"} %></td>
+					</tr>
+					<% end %>
+					</table>
+			</div>
+			<div>
+				<p>
+					<i class="far fa-comments"></i>
+					<strong>みんなのコメント</strong>
+				</p>
+			</div>
+			<%= render "public/post_comments/form", post: @post, post_comment: @post_comment %>
+			<%= render "public/post_comments/index", post: @post %>
+		</div>
+</div>
+</div>

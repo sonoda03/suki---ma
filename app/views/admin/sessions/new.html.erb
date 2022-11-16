@@ -1,0 +1,38 @@
+<div class='container pt-5'>
+  <h5 class="col-7 my-5">管理者ログイン</h5>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <table width="800">
+        <tr>
+          <td width="20%">
+            <%= f.label "メールアドレス"%>
+          </td>
+          <td>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: 'sample@example.com', :size=>"30" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label "パスワード" %>
+          </td>
+          <td>
+            <%= f.password_field :password, autocomplete: "current-password",:size=>"30" %>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <%= f.submit "ログイン", class: "btn btn-primary", :size=>"50" %>
+          </td>
+        </tr>
+      </table>
+        <% end %>
+     <%= render "admin/shared/links" %>
+    </div>
+  </div>
+</div>

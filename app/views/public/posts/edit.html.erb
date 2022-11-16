@@ -1,0 +1,75 @@
+<div class='container mt-5'>
+  <div class='row pt-3'>
+  	<div class='col-md-3'>
+  	  <div>
+        <h2 style="text-align:center;">User info</h2>
+        <%= render 'public/users/info', user: current_user %>
+      </div>
+	  </div>
+    <%= flash[:notice] %>
+    <div class='col-md-8 offset-md-1 mt-3'>
+      <h5 class= "ml-2">投稿編集</h5>
+      <div>
+        <%= form_with url: post_path, model: @post, method: :patch, local: true do |form| %>
+          <table class="ml-4  mt-5">
+            <tr>
+              <td>
+                <%= form.label "紹介画像"%>
+              </td>
+              <td>
+                 <%= form.file_field :post_image, accept: "image/*" %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= form.label "タイトル"%>
+              </td>
+              <td>
+                 <%= form.text_field :title,placeholder: 'タイトル', class: "form-control" %>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <%= form.label "投稿紹介"%>
+              </td>
+              <td>
+                <%= form.text_area :introduction,placeholder: 'ここに投稿紹介文の記述をしてください。', class: "form-control", :size=>"42x8" %>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <%= form.label :url, "URL(任意)"%>
+              </td>
+              <td>
+                <%= form.text_area :url,placeholder: 'URLを貼ってください。', class: "form-control", :size=>"42x2" %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= form.label "ジャンル", class: "mr-3" %>
+              </td>
+              <td>
+                <%= form.collection_select :genre_id, Genre.all, :id, :name,
+                                       :prompt => "--選択してください--"%>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= form.label "タグ" %>
+              </td>
+              <td>
+                <%= form.text_field :name,value: @tag_list, class: "form-control", placeholder: '  , で区切るとタグを複数登録可能'%>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="center">
+                <%= form.submit '変更を保存', class: "btn-success btn-lg mt-3" %>
+              </td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

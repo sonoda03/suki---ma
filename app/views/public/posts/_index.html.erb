@@ -1,0 +1,27 @@
+<div class='row pt-3 row-eq-height'>
+  <% posts.each do |post| %>
+    <div class="col-md-3 mx-2  mb-3 " style="border: 1px solid #333333; border-radius: 10px;">
+      <div class = "mt-2">
+        <%= link_to post_path(post.id) do %>
+        <%= image_tag post.get_post_image, class: "rounded", size: '150x150' %>
+        <% end %>
+      </div>
+      <div>
+        <u><p><strong><%= post.title %></strong></p></u>
+      </div>
+      <div>
+        <p>ジャンル：<%= post.genre.name %></p>
+      </div>
+      <div>
+        <% post.tags.each do |tag|%>
+          #<%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %>
+          <%="(#{tag.posts.count})" %>
+        <% end %>
+      </div>
+      <div>
+        <p><i class="far fa-comments"></i> <%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
