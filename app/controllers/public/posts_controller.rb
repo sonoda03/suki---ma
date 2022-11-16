@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
   # 検索
-  before_action :set_q, only: [:new, :index, :show, :search]
+  before_action :set_q, only: [:new, :index, :show, :search, :search_tag]
 
   def index
     @genres = Genre.all
@@ -67,10 +67,17 @@ class Public::PostsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # 検索
+  # 投稿詳細検索
   def search
     @results = @q.result
     @genres = Genre.all
+  end
+
+  # タグ検索
+  def search_tag
+    @tag_list = Tag.all
+    @tag = Tag.find(params[:tag_id])
+    @posts = @tag.posts
   end
 
   private

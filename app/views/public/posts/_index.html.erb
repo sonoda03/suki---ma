@@ -13,7 +13,10 @@
         <p>ジャンル：<%= post.genre.name %></p>
       </div>
       <div>
-        <p>#<%= post.tags.map(&:name).join('# ') %></p>
+        <% post.tags.each do |tag|%>
+          #<%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %>
+          <%="(#{tag.posts.count})" %>
+        <% end %>
       </div>
       <div>
         <p><i class="far fa-comments"></i> <%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
