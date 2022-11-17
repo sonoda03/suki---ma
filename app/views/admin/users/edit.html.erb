@@ -6,6 +6,7 @@
           <span class="px-3 bg-ligh alert-secondary"><%= @user.full_name %>さんの会員情報編集</span>
         </h5>
       </div>
+      <%= render 'layouts/error_messages', resource: @user %>
     </div>
   </div>
   <div class="container mx-5">

@@ -6,8 +6,7 @@ ja:
         name: "商品名"
         introduction: "商品説明"
         price: "税抜価格"
-      cart_item:
-        amount: "数量"
+      
       user:
         email: "メールアドレス"
         last_name: "姓"
