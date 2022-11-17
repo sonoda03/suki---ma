@@ -63,6 +63,8 @@ gem 'rinku'
 # 検索機能
 gem 'ransack'
 
+gem 'rails-i18n'
+
 # MySQLを利用
 # Gem「dotenv-rails」では、プロジェクトごとにファイルベースで環境変数を管理
 gem 'dotenv-rails'
@@ -73,3 +75,4 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
