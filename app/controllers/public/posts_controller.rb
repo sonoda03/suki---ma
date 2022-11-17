@@ -41,6 +41,11 @@ class Public::PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @tag_list=@post.tags.pluck(:name).join(',')
+    if @post.user == current_user
+      render "edit"
+    else
+      redirect_to post_path(@post)
+    end
   end
 
   def update
