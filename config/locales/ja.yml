@@ -1,12 +1,6 @@
 ja:
   activerecord:
     attributes:
-      item:
-        image: "画像"
-        name: "商品名"
-        introduction: "商品説明"
-        price: "税抜価格"
-      
       user:
         email: "メールアドレス"
         last_name: "姓"
@@ -18,8 +12,14 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
         current_password: "現在のパスワード"
+      post:
+        title: "タイトル"
+        introduction: "投稿紹介"
+        genre: "ジャンル名"
       genre:
         name: "ジャンル名"
+      post_comment:
+        comment: "コメント"
   views:
     pagination:
       first: "≪"

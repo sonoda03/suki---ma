@@ -11,6 +11,9 @@ class Post < ApplicationRecord
   def get_post_image
     (post_image.attached?) ? post_image : 'no_image_square'
   end
+  
+  validates :title, presence: true
+  validates :introduction, presence: true, length: { maximum: 300 } 
 
   # ログイン中のユーザーがその投稿にお気に入りをしているか判断
   def favorited_by?(user)

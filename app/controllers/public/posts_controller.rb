@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show, :search, :search_tag,]
   # 検索
-  before_action :set_q, only: [:new, :index, :show, :search, :search_tag]
+  before_action :set_q, only: [:new, :index, :show, :create, :search, :search_tag]
 
   def index
     @genres = Genre.all

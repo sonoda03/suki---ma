@@ -1,5 +1,7 @@
 class Public::PostCommentsController < ApplicationController
-  
+  protect_from_forgery
+   before_action :authenticate_user!, except: [:destroy]
+
   def create
     post = Post.find(params[:post_id])
     comment = current_user.post_comments.new(post_comment_params)
