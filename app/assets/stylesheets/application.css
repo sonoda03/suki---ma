@@ -33,6 +33,12 @@
     font-size: 15px;
     margin-top: 10px;
   }
+  
+  .nav_top{
+    background: #f4b095;
+    margin-left: 5px;
+    border-radius: 10px;
+  }
 
   .nav_1{
     background: #9bca54;
