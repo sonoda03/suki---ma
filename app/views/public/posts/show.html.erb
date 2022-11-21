@@ -1,13 +1,11 @@
 <div class='container mt-5'>
   <div class='row pt-3'>
   	<div class='col-md-3'>
-        <%= render 'public/users/info', user: @post.user %>
-      <div class='mt-5'>
-        <h2 style="text-align:center;">投稿検索</h2>
-        <%= render 'form', q: @q %>
-      </div>
-	  </div>
-	  <div class='col-md-8 offset-md-1'>
+      <%= render 'public/users/info', user: @post.user %>
+      <%= render 'form', q: @q %>
+    </div>
+	</div>
+	<div class='col-md-8 offset-md-1'>
 			<div class="d-flex bd-highlight mb-3 mt-3 ">
 			  <h5 class="p-2 bd-highlight">
 					<%= @post.user.nickname %>さんの投稿詳細
