@@ -65,6 +65,8 @@ gem 'ransack'
 
 gem 'rails-i18n'
 
+gem 'kaminari','~> 1.2.1'
+
 # MySQLを利用
 # Gem「dotenv-rails」では、プロジェクトごとにファイルベースで環境変数を管理
 gem 'dotenv-rails'

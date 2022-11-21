@@ -33,7 +33,7 @@
     font-size: 15px;
     margin-top: 10px;
   }
-  
+
   .nav_top{
     background: #f4b095;
     margin-left: 5px;
@@ -62,4 +62,8 @@
     background: #a3b6de;
     margin-left: 5px;
     border-radius: 10px;
+  }
+
+  .pagination{
+  justify-content: center;
   }

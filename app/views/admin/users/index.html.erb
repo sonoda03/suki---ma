@@ -7,30 +7,31 @@
 　　　<div class='col-md-10 offset-2'>
         <table class="table table-hover table-inverse" >
           <thead class="thead-light">
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>メールアドレス</th>
-        <th>投稿数</th>
-      </thead>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>投稿数</th>
+          </thead>
           <tbody>
-        <% @users.each do |user| %>
-        <tr>
-          <td><%= user.id %></td>
-          <td>
-            <%= link_to  admin_user_path(user.id) do %>
-              <span class="text-dark border-bottom border-dark">
-                <%=  user.full_name %>
-              </span>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td>
+                <%= link_to  admin_user_path(user.id) do %>
+                  <span class="text-dark border-bottom border-dark">
+                    <%=  user.full_name %>
+                  </span>
+                <% end %>
+              </td>
+              <td><%= user.email %></td>
+              <td>
+                <%= user.posts.count %>投稿
+              </td>
+            </tr>
             <% end %>
-          </td>
-          <td><%= user.email %></td>
-          <td>
-            <%= user.posts.count %>投稿
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
+          </tbody>
         </table>
+        <%= paginate @users %>
       </div>
     </div>
   </div>
