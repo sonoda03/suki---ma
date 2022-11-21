@@ -1,4 +1,7 @@
-<% if user_signed_in? %>
+<div class="all_user_info">
+  <div class="all_center_user_info py-5">
+    <h2 style="text-align:center;">User info</h2>
+  <% if user_signed_in? %>
   <table class="table table-borderless">
     <tr>
       <td align=center>
@@ -11,22 +14,22 @@
   	  <td align=center><strong><%= user.nickname %></strong> さん</td>
     </tr>
     <tr>
-  	  <td>＜自己紹介＞<br>
+  	  <td><strong>＜自己紹介＞</strong><br>
   	    <%= user.introduction %>
   	  </td>
     </tr>
   </table>
 
-  <div class='row'>
-    <%=link_to favorites_user_path(user), class: "btn btn-outline-secondary btn-block favorites_user_#{user.id}" do %>
-      <i class="fab fa-gratipay"></i>　お気に入り一覧
-    <% end %>
-    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
-      <i class="fas fa-user-cog"></i>　会員情報編集
-    <% end %>
-  </div>
-<% else %>
-  <div>
+    <div class="info-btn">
+      <%=link_to favorites_user_path(user), class: "btn btn-outline-secondary btn-block favorites_user_#{user.id}" do %>
+        <i class="fab fa-gratipay"></i>　お気に入り一覧
+      <% end %>
+      <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+        <i class="fas fa-user-cog"></i>　会員情報編集
+      <% end %>
+    </div>
+  <% else %>
+    <div>
   	  <p align=center>
   	    <img src="/assets/no_image_square.jpg" , width="120" height="120">
       </p>
@@ -36,13 +39,16 @@
   	      ログインしてください。
   	    </strong>
   	  </p>
+    </div>
+    <div class="info-btn">
+      <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fab fa-gratipay"></i>　お気に入り一覧
+      <% end %>
+      <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>　会員情報編集
+      <% end %>
+    </div>
+  <% end %>
   </div>
-  <div class='row'>
-    <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
-      <i class="fab fa-gratipay"></i>　お気に入り一覧
-    <% end %>
-    <%= link_to posts_path, class: "btn btn-outline-secondary btn-block" do %>
-      <i class="fas fa-user-cog"></i>　会員情報編集
-    <% end %>
-  </div>
-<% end %>
+</div>
+
