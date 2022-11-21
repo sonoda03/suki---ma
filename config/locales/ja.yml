@@ -22,10 +22,11 @@ ja:
         comment: "コメント"
   views:
     pagination:
-      first: "≪"
-      previous: "<"
-      next: ">"
-      last: "≫"
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
   devise:
     failure:
       already_authenticated: "既にログイン済みです。"

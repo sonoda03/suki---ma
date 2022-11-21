@@ -8,6 +8,9 @@
             <li class="my-auto pr-5 mr-5 text-light">
               <p class="header_welcom">管理者アカウントでログイン中。</p>
             </li>
+            <li class='nav_top'>
+              <%=  link_to root_path,class: 'btn btn-outline-light btn-lg' do %>TOP<% end %>
+            </li>
             <li class='nav_1'>
               <%=  link_to posts_path,class: 'btn btn-outline-light btn-lg' do %>みんなの投稿<% end %>
             </li>
@@ -23,6 +26,9 @@
           <% else %>
             <li class="my-auto pr-5 mr-5 text-light">
               <p class="header_welcom">管理者アカウントでログイン中。</p>
+            </li>
+            <li class='nav_top'>
+              <%=  link_to root_path,class: 'btn btn-outline-light btn-lg' do %>Top<% end %>
             </li>
             <li class='nav_1'>
               <%=  link_to posts_path,class: 'btn btn-outline-light btn-lg' do %>みんなの投稿<% end %>
@@ -42,6 +48,9 @@
           <li class="my-auto pr-5 mr-5 text-light">
             <p class="header_welcom">ようこそ、<%=  current_user.nickname %> さん！!</p>
           </li>
+          <li class='nav_top'>
+              <%=  link_to root_path,class: 'btn btn-outline-light btn-lg' do %>TOP<% end %>
+            </li>
           <li class='nav_1'>
             <%=  link_to posts_path,class: 'btn btn-outline-light btn-lg' do %>みんなの投稿<% end %>
           </li>
@@ -56,6 +65,9 @@
           </li>
 
         <% else %>
+          <li class='nav_top'>
+              <%=  link_to root_path,class: 'btn btn-outline-light btn-lg' do %>TOP<% end %>
+          </li>
           <li class='nav_1'>
             <%=  link_to posts_path,class: 'btn btn-outline-light btn-lg' do %>みんなの投稿<% end %>
           </li>
@@ -63,7 +75,7 @@
             <%= link_to new_user_registration_path,class: 'btn btn-outline-light btn-lg' do %>新規登録<% end %>
           </li>
           <li class="nav_3">
-            <%= link_to new_user_session_path ,class: 'btn btn-outline-light btn-lg' do %>ユーザログイン<% end %>
+            <%= link_to new_user_session_path ,class: 'btn btn-outline-light btn-lg' do %>ログイン<% end %>
           </li>
         <% end %>
 

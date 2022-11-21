@@ -9,7 +9,7 @@ class Public::PostsController < ApplicationController
       @genre = Genre.find(params[:genre_id])
       @posts = @genre.posts
     else
-      @posts = Post.all
+      @posts = Post.page(params[:page])
     end
   end
 
@@ -75,7 +75,7 @@ class Public::PostsController < ApplicationController
 
   # 投稿詳細検索
   def search
-    @results = @q.result
+    @results = @q.result.page(params[:page])
     @genres = Genre.all
   end
 
@@ -83,7 +83,7 @@ class Public::PostsController < ApplicationController
   def search_tag
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
-    @posts = @tag.posts
+    @posts = @tag.posts.page(params[:page])
   end
 
   private
