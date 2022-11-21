@@ -30,12 +30,18 @@ class Public::UsersController < ApplicationController
     @user = current_user
   end
 
-  def withdraw
+  def destroy
     @user = current_user
-    @user.update(is_deleted: true)
-    reset_session
+    @user.destroy
     redirect_to root_path
   end
+
+  # def withdraw
+  #   @user = current_user
+  #   @user.update(is_deleted: true)
+  #   reset_session
+  #   redirect_to root_path
+  # end
 
   private
 
