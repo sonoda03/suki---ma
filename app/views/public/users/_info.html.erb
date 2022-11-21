@@ -2,7 +2,9 @@
   <table class="table table-borderless">
     <tr>
       <td align=center>
-      <%= image_tag user.get_profile_image, size:'120x120' %>
+        <%= link_to user_path(user) do %>
+          <%= image_tag user.get_profile_image, size:'120x120' %>
+        <% end %>
       </td>
     </tr>
     <tr>

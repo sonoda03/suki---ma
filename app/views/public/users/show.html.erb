@@ -9,6 +9,7 @@
 	  <div class='col-md-8 offset-md-1'>
       <h5><%= @user.nickname %> さんの投稿一覧<span class='item_count'>( 全 <%= @user.posts.count %> 件 )</span></h5>
         <%= render 'public/posts/index', posts: @posts %>
+        <%= paginate @posts %>
     </div>
   </div>
 </div>

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :email, presence: true, uniqueness: true
-  validates :nickname, presence: true, length: { in: 3..10 }
+  validates :nickname, presence: true, length: { in: 3..8 }
   validates :introduction, length: { maximum: 160 }
 
   has_one_attached :profile_image
