@@ -1,5 +1,6 @@
 <div class="container">
-  <h5 class="col-md-7 mb-5 mt-5">ジャンル編集</h5>
+  <h5 class="col-md-7 mb-5 mt-5 pt-5">ジャンル編集</h5>
+  <%= render 'layouts/error_messages', resource: @genre %>
   <div class="row mt-5">
     <%= form_with model: @genre,url:admin_genre_path,local:true do |f| %>
       <div>

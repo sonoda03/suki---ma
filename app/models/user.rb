@@ -8,6 +8,15 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :email, presence: true, uniqueness: true
+  validates :nickname, presence: true, length: { in: 3..10 }
+  validates :introduction, length: { maximum: 160 }
+
   has_one_attached :profile_image
 
   def get_profile_image

@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search, :search_tag,]
   # 検索
-  before_action :set_q, only: [:new, :index, :show, :search, :search_tag]
+  before_action :set_q, only: [:new, :index, :show, :create, :search, :search_tag]
 
   def index
     @genres = Genre.all
@@ -40,6 +41,11 @@ class Public::PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @tag_list=@post.tags.pluck(:name).join(',')
+    if @post.user == current_user
+      render "edit"
+    else
+      redirect_to post_path(@post)
+    end
   end
 
   def update

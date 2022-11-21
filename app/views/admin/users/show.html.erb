@@ -8,7 +8,6 @@
 			</div>
 		</div>
 	</div>
-	<%= flash[:notice] %>
 	<div class='row'>
 		<div class='col-4'>
 			<p>プロフィール画像（ほかユーザに公開）</p>
@@ -56,16 +55,8 @@
 				</tr>
 				<tr>
 					<td>投稿数</td>
-					<td colspan="2"><%= @user.posts.count %></td>
+					<td colspan="2"><%= @user.posts.count %>投稿</td>
 				</tr>
-				<tr>
-          <td>会員ステータス</td>
-           <% if @user.is_deleted? %>
-              <td class="text-black-50">退会</td>
-           <% else %>
-              <td class="text-success">有効</td>
-           <% end %>
-        </tr>
 				<tr>
 					<td><%= link_to "編集", edit_admin_user_path(@user), class: "btn btn-success" %></td>
 				</tr>
