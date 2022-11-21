@@ -11,7 +11,6 @@
         <th>氏名</th>
         <th>メールアドレス</th>
         <th>投稿数</th>
-        <th>ステータス</th>
       </thead>
           <tbody>
         <% @users.each do |user| %>
@@ -25,12 +24,9 @@
             <% end %>
           </td>
           <td><%= user.email %></td>
-          <td><%= user.posts.count %>投稿</td>
-        <% if user.is_deleted? %>
-          <td class="text-black-50">退会</td>
-        <% else %>
-          <td class="text-success">有効</td>
-        <% end %>
+          <td>
+            <%= user.posts.count %>投稿
+          </td>
         </tr>
         <% end %>
       </tbody>
