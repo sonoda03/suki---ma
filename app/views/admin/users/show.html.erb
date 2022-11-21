@@ -58,14 +58,6 @@
 					<td colspan="2"><%= @user.posts.count %></td>
 				</tr>
 				<tr>
-          <td>会員ステータス</td>
-           <% if @user.is_deleted? %>
-              <td class="text-black-50">退会</td>
-           <% else %>
-              <td class="text-success">有効</td>
-           <% end %>
-        </tr>
-				<tr>
 					<td><%= link_to "編集", edit_admin_user_path(@user), class: "btn btn-success" %></td>
 				</tr>
 			</table>

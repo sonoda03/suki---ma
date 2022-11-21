@@ -26,11 +26,6 @@
           </td>
           <td><%= user.email %></td>
           <td><%= user.posts.count %>投稿</td>
-        <% if user.is_deleted? %>
-          <td class="text-black-50">退会</td>
-        <% else %>
-          <td class="text-success">有効</td>
-        <% end %>
         </tr>
         <% end %>
       </tbody>
