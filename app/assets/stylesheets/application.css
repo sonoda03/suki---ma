@@ -25,26 +25,23 @@
   min-height: 100vh;
   }
 
-  main{
-    /*z-index:9998;*/
-    width: 100%;
-    height: 100%;
-    background: #fffcef;
-    color: #7c5341;
-    flex: 1;
-  }
 
   header{
-    /*z-index:9999;*/
     width: 100%;
     height:150px;
+    z-index:9999;
     background: #ffe350;
+    position:relative;
   }
 
   .header_welcom{
     color: #7c5341;
     font-size: 15px;
     margin-top: 40px;
+  }
+
+  .collapse{
+    background-color: #ffe350;
   }
 
   .nav_top{
@@ -84,6 +81,15 @@
 
   .pagination{
   justify-content: center;
+  }
+
+  main{
+    z-index:9998;
+    width: 100%;
+    height: 100%;
+    background: #fffcef;
+    color: #7c5341;
+    flex: 1;
   }
 
   footer{
