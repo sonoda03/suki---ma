@@ -1,6 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container mt-2">
+      <a class="navbar-brand" href="/"><%= image_tag 'karilogo_colorful2.png', size: '120x120', class: "logo" %></a>
       <button class="navbar-toggler mt-4" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -8,7 +9,7 @@
         <ul class="navbar-nav ml-auto">
         <% if admin_signed_in? %>
           <% if request.fullpath.include? "/admin" %>
-            <li class="my-auto pr-5 mr-5 text-light btn-lg">
+            <li class="my-auto text-light btn-lg">
               <p class="header_welcom">管理者アカウントでログイン中。</p>
             </li>
             <li class='nav_top'>
@@ -27,7 +28,7 @@
               <%= link_to destroy_admin_session_path, method: :delete,class: 'btn text-light btn-lg' do %>管理者ログアウト<% end %>
             </li>
           <% else %>
-            <li class="my-auto pr-5 mr-5 text-light btn-lg">
+            <li class="my-auto text-light btn-lg">
               <p class="header_welcom">管理者アカウントでログイン中。</p>
             </li>
             <li class='nav_top'>
