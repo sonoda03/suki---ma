@@ -1,10 +1,10 @@
 <div class='container mt-5'>
   <div class='row pt-3'>
-  	<div class='col-md-3'>
+  	<div class='col-md-3 mr-5'>
         <%= render 'public/users/info', user: current_user %>
         <%= render 'form', q: @q %>
 	  </div>
-	  <div class='col-md-8 offset-md-1 mt-3'>
+	  <div class='col mt-3 px-0'>
       <h4><strong>“ <%= @tag.name %> ” のタグ検索投稿一覧 </strong></h4>
       <%= render 'index', posts: @posts %>
       <%= paginate @posts %>

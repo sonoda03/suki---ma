@@ -4,7 +4,7 @@
       <%= render 'public/users/info', user: @user %>
 	  </div>
 	  <div class='col-md-8 offset-md-1'>
-      <h5><%= @user.nickname %> さんの投稿一覧<span class='item_count'>( 全 <%= @user.posts.count %> 件 )</span></h5>
+      <h4><strong><%= @user.nickname %> さんの投稿一覧<span class='item_count'>( 全 <%= @user.posts.count %> 件 )</span></h4>
         <%= render 'public/posts/index', posts: @posts %>
         <%= paginate @posts %>
     </div>

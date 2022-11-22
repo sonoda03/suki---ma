@@ -5,7 +5,9 @@
         <%= render 'form', q: @q %>
 	  </div>
     <div class='col-md-8 offset-md-1 mt-3'>
-    <h4 class= "ml-2">新規投稿</h4>
+      <h4>
+		  	<strong>新規投稿</strong>
+			</h4>
     <%= render 'layouts/error_messages', resource: @post %>
       <%= form_with url: posts_path, model: @post, local: true do |form| %>
         <table class="ml-4 mt-5">
@@ -61,7 +63,7 @@
           <tr>
             <td></td>
             <td align="center">
-              <%= form.submit '新規登録', class: "btn-success btn-lg" %>
+              <%= form.submit '新規登録', class: "btn-success btn-lg mt-3" %>
             </td>
           </tr>
         </table>

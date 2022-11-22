@@ -1,27 +1,27 @@
-<div class='row pt-3 row-eq-height'>
+<div class="container-fluid">
+  <div class='row'>
   <% posts.each do |post| %>
-    <div class="col-md-3 mx-2  mb-3 " style="border: 1px solid #333333; border-radius: 10px;">
-      <div class = "mt-2">
+    <div class="all_posts col-md-3 mt-2 pl-1" style=" border-radius: 10px;">
+      <div style="text-align:center;" class="mt-2">
         <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_post_image, class: "rounded", size: '150x150' %>
+        <%= image_tag post.get_post_image, class: "rounded", size: '160x130' %>
         <% end %>
       </div>
-      <div>
+      <div style="text-align:center;">
         <u><p><strong><%= post.title %></strong></p></u>
-      </div>
-      <div>
         <p>ジャンル：<%= post.genre.name %></p>
-      </div>
-      <div>
-        <% post.tags.each do |tag|%>
+        <p>
+          <% post.tags.each do |tag|%>
           #<%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %>
           <%="(#{tag.posts.count})" %>
         <% end %>
-      </div>
-      <div>
+        </p>
         <p><i class="far fa-comments"></i> <%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
       </div>
+      <p>投稿者:　<%= link_to post.user.nickname, user_path(post.user) %></p>
     </div>
   <% end %>
 </div>
+</div>
+
 
