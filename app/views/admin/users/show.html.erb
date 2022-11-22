@@ -11,11 +11,7 @@
 	<div class='row'>
 		<div class='col-4'>
 			<p>プロフィール画像（ほかユーザに公開）</p>
-			  <% if @user.profile_image.attached? %>
-			    <%= image_tag @user.profile_image, size: "200x200" %>
-			  <% else %>
-			    <%= image_tag 'no_image_square', size: "200x200" %>
-			  <% end %>
+			<%= image_tag @user.get_profile_image, size: "200x200" %>
 		</div>
 		<div class='col-8'>
 			<table class="table table-borderless ">
