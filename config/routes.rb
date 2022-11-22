@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # 会員用
   scope module: :public do
-    resources :users, only: [:show, :edit, :destroy] do
+    resources :users, only: [:show, :edit, :update, :destroy] do
       get '/unsubscribe' => 'users#unsubscribe'
       member do
         get 'favorites'

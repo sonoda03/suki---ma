@@ -10,9 +10,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <%= render 'layouts/header' %>
-  <body class="full-page">
+  <body>
+    <%= render 'layouts/header' %>
+    <main>
       <%= yield %>
+    </main>
+    <footer></footer>
   </body>
 </html>

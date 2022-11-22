@@ -1,14 +1,12 @@
 <div class='container mt-5'>
   <div class='row pt-3'>
   	<div class='col-md-3'>
-  	  <div>
-        <h2 style="text-align:center;">User info</h2>
         <%= render 'public/users/info', user: current_user %>
-      </div>
 	  </div>
-
-    <div class='col-md-8 offset-md-1 mt-3'>
-      <h5 class= "ml-2">投稿編集</h5>
+    <div class='form col-md-8 offset-md-1'>
+      <h4>
+		  	<strong>投稿編集</strong>
+			</h4>
       <div>
         <%= render 'layouts/error_messages', resource: @post %>
         <%= form_with url: post_path, model: @post, method: :patch, local: true do |form| %>
@@ -50,8 +48,7 @@
                 <%= form.label "ジャンル", class: "mr-3" %>
               </td>
               <td>
-                <%= form.collection_select :genre_id, Genre.all, :id, :name,
-                                       :prompt => "--選択してください--"%>
+                <%= form.collection_select :genre_id, Genre.all, :id, :name %>
               </td>
             </tr>
             <tr>

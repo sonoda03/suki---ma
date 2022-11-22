@@ -1,45 +1,36 @@
 <div class='container mt-5'>
   <div class='row pt-3'>
   	<div class='col-md-3'>
-  	  <div>
-        <h2 style="text-align:center;">User info</h2>
-        <%= render 'public/users/info', user: @post.user %>
-      </div>
-      <div class='mt-5'>
-        <h2 style="text-align:center;">投稿検索</h2>
-        <%= render 'form', q: @q %>
-      </div>
-	  </div>
-	  <div class='col-md-8 offset-md-1'>
-			<div class="d-flex bd-highlight mb-3 mt-3 ">
-			  <h5 class="p-2 bd-highlight">
-					<%= @post.user.nickname %>さんの投稿詳細
-				</h5>
-			</div>
-			<p>紹介画像</p>
-			<div>
-			<% if @post.post_image.attached? %>
-			    <%= image_tag @post.post_image, size: "200x200" %>
+      <%= render 'public/users/info', user: @post.user %>
+      <%= render 'form', q: @q %>
+    </div>
+		<div class='col-md-8 offset-md-1'>
+		  <h4>
+		  	<strong><%= @post.user.nickname %>さんの投稿詳細</strong>
+			</h4>
+			<div class="all_post_show">
+				<p>紹介画像</p>
+				<% if @post.post_image.attached? %>
+				    <%= image_tag @post.post_image, size: "260x220" %>
 			  <% else %>
-			    <%= image_tag 'no_image_square', size: "200x200" %>
+			    <%= image_tag 'no_image_square', size: "260x220" %>
 			  <% end %>
-			</div>
-			<div>
+				<div>
 				<table class="table table-borderless ">
 					<tr>
-						<td>タイトル</td>
+						<th>タイトル</th>
 						<td><%= @post.title %></td>
 					</tr>
 					<tr>
-						<td>投稿紹介</td>
+						<th>投稿紹介</th>
 						<td><%= @post.introduction %></td>
 					</tr>
 					<tr>
-						<td>URL(任意)</td>
+						<th>URL(任意)</th>
 						<td colspan="2"><%= Rinku.auto_link(@post.url, :all, 'target="_blank"').html_safe %></td>
 					</tr>
 					<tr>
-	          <td>ジャンル</td>
+	          <th>ジャンル</th>
 	        　<td><%= @post.genre.name %></td>
 	        </tr>
 	        <tr>
@@ -51,8 +42,8 @@
 	        	</td>
 	        </tr>
 					<tr>
-						<td>お気に入り:<%= render "public/favorites/btn", post: @post %></td>
-						<td>コメント数：<%= @post.post_comments.count %></td>
+						<th>お気に入り:<%= render "public/favorites/btn", post: @post %></th>
+						<th>コメント数：<%= @post.post_comments.count %></th>
 					</tr>
 					<% if @post.user == current_user %>
 					<tr>
@@ -66,14 +57,15 @@
 					<% end %>
 					</table>
 			</div>
-			<div>
-				<p>
+			</div>
+			<div class="all_post_comments">
+				<h5>
 					<i class="far fa-comments"></i>
 					<strong>みんなのコメント</strong>
-				</p>
+				</h5>
+				<%= render "public/post_comments/form", post: @post, post_comment: @post_comment %>
+				<%= render "public/post_comments/index", post: @post %>
 			</div>
-			<%= render "public/post_comments/form", post: @post, post_comment: @post_comment %>
-			<%= render "public/post_comments/index", post: @post %>
 		</div>
-</div>
+	</div>
 </div>

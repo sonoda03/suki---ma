@@ -45,8 +45,8 @@
       <%= f.label :"パスワード(確認用)",class: "col-sm-2 control-label mr-5" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
-    <div class="actions col-7 text-center">
-      <%= f.submit "登録する", class: 'btn btn-sm btn-success control-submit mr-5' %>
+    <div class="actions col-8 text-center">
+      <%= f.submit "登録する", class: 'btn btn-lg btn-success control-submit mr-5' %>
     </div>
   </div>
 <% end %>
@@ -55,8 +55,9 @@
       <h4 class="alert-secondary">既に登録済みの方<h4>
     </div>
 
-    <div class="row">
-     <div class="col-4 offset-1">
-       <%= link_to "こちら", new_user_session_path %> からログインしてください。
-     </div>
+    <div>
+      <p>
+      　　　　　<%= link_to "こちら", new_user_session_path %> からログインしてください。
+      </p>
     </div>
+  </div>
