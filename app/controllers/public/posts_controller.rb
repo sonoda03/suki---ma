@@ -31,7 +31,6 @@ class Public::PostsController < ApplicationController
     tag_list = params[:post][:name].split(",")
     if @post.save
       @post.save_tag(tag_list)
-      flash[:notice] = "投稿しました。"
       redirect_to post_path(@post)
     else
       render "new"
@@ -59,7 +58,6 @@ class Public::PostsController < ApplicationController
       end
       # 再度タグ登録
       @post.save_tag(tag_list)
-      flash[:notice] = "投稿を更新しました。"
       redirect_to post_path(@post)
     else
       render "edit"
@@ -69,7 +67,6 @@ class Public::PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:notice] = "投稿を削除しました。"
     redirect_to user_path(current_user)
   end
 

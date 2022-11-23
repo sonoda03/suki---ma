@@ -1,10 +1,10 @@
-<div class='container mt-5'>
-  <div class='row pt-3'>
-  	<div class='col-md-3'>
-      <%= render 'public/users/info', user: @post.user %>
-      <%= render 'form', q: @q %>
+<div class="container mt-2">
+  <div class="row pt-3">
+  	<div class="col-md-3">
+      <%= render "public/users/info", user: @post.user %>
+      <%= render "form", q: @q %>
     </div>
-		<div class='col-md-8 offset-md-1'>
+		<div class="col-md-8 offset-md-1">
 		  <h4>
 		  	<strong><%= @post.user.nickname %>さんの投稿詳細</strong>
 			</h4>
@@ -13,9 +13,8 @@
 				<% if @post.post_image.attached? %>
 				    <%= image_tag @post.post_image, size: "260x220" %>
 			  <% else %>
-			    <%= image_tag 'no_image_square', size: "260x220" %>
+			    <%= image_tag "no_image_square", size: "260x220" %>
 			  <% end %>
-				<div>
 				<table class="table table-borderless ">
 					<tr>
 						<th>タイトル</th>
@@ -52,8 +51,7 @@
 					</tr>
 					<% else %>
 					<% end %>
-					</table>
-			</div>
+				</table>
 			</div>
 			<div class="all_post_comments">
 				<h5>
