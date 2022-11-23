@@ -1,15 +1,15 @@
-<div class='container mt-5'>
-  <div class='row pt-3'>
-  	<div class='col-md-3'>
-      <%= render 'public/users/info', user: @user %>
-      <div class='mt-5'>
+<div class="container">
+  <div class="row my-5">
+  	<div class="col-md-3">
+      <%= render "public/users/info", user: @user %>
+      <div class="mt-5">
         <h2 style="text-align:center;">投稿検索</h2>
-        <%= render 'public/posts/form', q: @q %>
+        <%= render "public/posts/form", q: @q %>
       </div>
 	  </div>
-    <div class='col-md-8 offset-md-1'>
-      <h5><%= @user.nickname %>さんのお気に入り一覧 <span class='item_count'>(全<%= @favorite_posts.count %>件)</span></h5>
-        <%= render 'public/posts/index', posts: @favorite_posts %>
+    <div class="col-md-8 offset-md-1">
+      <h5><%= @user.nickname %>さんのお気に入り一覧 <span class="item_count">(全<%= @favorite_posts.count %>件)</span></h5>
+        <%= render "public/posts/index", posts: @favorite_posts %>
 	  </div>
   </div>
 </div>
