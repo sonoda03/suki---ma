@@ -28,19 +28,18 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    tag_list = params[:post][:name].split(',')
+    tag_list = params[:post][:name].split(",")
     if @post.save
       @post.save_tag(tag_list)
-      flash[:notice] = "投稿しました。"
       redirect_to post_path(@post)
     else
-      render 'new'
+      render "new"
     end
   end
 
   def edit
     @post = Post.find(params[:id])
-    @tag_list=@post.tags.pluck(:name).join(',')
+    @tag_list=@post.tags.pluck(:name).join(",")
     if @post.user == current_user
       render "edit"
     else
@@ -50,7 +49,7 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    tag_list = params[:post][:name].split(',')
+    tag_list = params[:post][:name].split(",")
     if @post.update(post_params)
       # 投稿についているタグを一旦全て削徐
       @old_relations=PostTag.where(post_id: @post.id)
@@ -59,17 +58,15 @@ class Public::PostsController < ApplicationController
       end
       # 再度タグ登録
       @post.save_tag(tag_list)
-      flash[:notice] = "投稿を更新しました。"
       redirect_to post_path(@post)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:notice] = "投稿を削除しました。"
     redirect_to user_path(current_user)
   end
 

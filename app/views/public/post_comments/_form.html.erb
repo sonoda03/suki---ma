@@ -3,7 +3,7 @@
     　※　誹謗・中傷、投稿と関係のないコメントなどは削除対象となりますのでご注意ください。
   </p>
   <%= form_with(model:[post, post_comment], local: true) do |f| %>
-    <div><%= f.text_area :comment, rows:'5',placeholder: "　コメントをここに書いてください", class: "w-100" %></div>
+    <div><%= f.text_area :comment, rows:"5",placeholder: "　コメントをここに書いてください", class: "w-100" %></div>
     <div class="text-right"><%= f.submit "送信する", class: "btn btn btn-secondary" %></div>
   <% end %>
 </div>

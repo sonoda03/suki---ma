@@ -1,25 +1,25 @@
   <div class="all_search">
     <div class="all_center_search py-4">
       <h3 style="text-align:center;">投稿検索</h3>
-    <%= search_form_for q, url: search_posts_path do |f| %>
-    <div class="search_form pl-3 pt-2">
-      <p>Title :</p>
-       <%= f.search_field :title_cont %>
-    </div>
-    <div class="search_form pl-3 pt-2">
-      <p>Tag：</p>
-      <%= f.search_field :tags_name_cont %>
-    </div>
-    <div class="search_form pl-3 pt-2">
-      <p>Genre :</p>
-      <%= f.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
-    </div>
-    <div>
-      <%= button_tag type: "submit", class: "btn  btn-outline-secondary mt-4 ml-5" do %>
-        <i class="fas fa-search"></i> 検索
+      <%= search_form_for q, url: search_posts_path do |f| %>
+        <div class="search_form pl-3 pt-2">
+          <p>Title :</p>
+           <%= f.search_field :title_cont %>
+        </div>
+        <div class="search_form pl-3 pt-2">
+          <p>Tag：</p>
+          <%= f.search_field :tags_name_cont %>
+        </div>
+        <div class="search_form pl-3 pt-2">
+          <p>Genre :</p>
+          <%= f.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
+        </div>
+        <div>
+          <%= button_tag type: "submit", class: "btn  btn-outline-secondary mt-4 ml-5" do %>
+            <i class="fas fa-search"></i> 検索
+          <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
     </div>
   </div>
 

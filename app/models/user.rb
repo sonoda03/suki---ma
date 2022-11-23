@@ -35,7 +35,7 @@ class User < ApplicationRecord
     end
   end
 
-  # 姓(last_name)と名(irst_name)を合わせて表示
+  # 姓(last_name)と名(first_name)を合わせて表示
   def full_name
     self.last_name + self.first_name
   end

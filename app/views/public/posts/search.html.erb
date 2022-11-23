@@ -1,12 +1,12 @@
-<div class='container mt-5'>
-  <div class='row pt-3'>
-  	<div class='col-md-3'>
-      <%= render 'public/users/info', user: current_user %>
-      <%= render 'form', q: @q %>
+<div class="container">
+  <div class="row pt-3">
+  	<div class="col-md-3">
+      <%= render "public/users/info", user: current_user %>
+      <%= render "form", q: @q %>
     </div>
-	  <div class='col-md-8 offset-md-1 mt-3'>
+	  <div class="col-md-8 offset-md-1 mt-3">
       <h4><strong>検索投稿一覧 </strong></h4>
-      <%= render 'index', posts: @results %>
+      <%= render "index", posts: @results %>
       <%= paginate @results %>
     </div>
   </div>
