@@ -1,18 +1,18 @@
-<div class='container'>
-  <h5 class="row mt-5 m5">
-    <p class="alert-secondary ml-5 mr-5">管理者ログイン</p>
-  </h5>
+<div class="container">
+  <div class="my-5">
+    <h5>管理者ログイン</h5>
+  </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group row ml-5">
       <%= f.label "メールアドレス", class: "col-sm-3 control-label" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: 'sample@example.com', :size=>"30" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "sample@example.com", :size=>"30" %>
     </div>
     <div class="form-group row ml-5">
       <%= f.label "パスワード", class: "col-sm-3 control-label" %>
       <%= f.password_field :password, autocomplete: "current-password",:size=>"30" %>
     </div>
     <div class="actions col-8 text-center">
-      <%= f.submit "ログイン", class: "btn btn-primary", :size=>"50" %>
+      <%= f.submit "ログイン", class: "btn btn-primary ml-5" %>
     </div>
   <% end %>
 </div>

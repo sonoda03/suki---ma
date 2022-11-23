@@ -9,19 +9,19 @@ Rails.application.routes.draw do
   # URL /users/sign_in ...
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
-    sessions: 'public/sessions'
+    sessions: "public/sessions"
   }
   devise_scope :user do
     # ゲストログイン
-    post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
+    post "users/guest_sign_in" => "public/sessions#guest_sign_in"
   end
 
   # 会員用
   scope module: :public do
     resources :users, only: [:show, :edit, :update, :destroy] do
-      get '/unsubscribe' => 'users#unsubscribe'
+      get "/unsubscribe" => "users#unsubscribe"
       member do
-        get 'favorites'
+        get "favorites"
       end
     end
     resources :posts do
@@ -29,9 +29,9 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       collection do
         # 投稿詳細検索
-        get 'search'
+        get "search"
         # 投稿タグ検索
-        get 'search_tag'
+        get "search_tag"
       end
     end
   end
@@ -43,9 +43,8 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    # resources :users, only: [:index, :show, :edit, :update]
-    resources :genres
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

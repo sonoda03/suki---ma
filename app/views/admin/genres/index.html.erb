@@ -1,20 +1,20 @@
 <div class="container">
-  <h5 class="col-md-7 mt-5 pt-5">ジャンル一覧・追加</h5>
+  <h5 class="col-md-7 mt-5">ジャンル一覧・追加</h5>
   <div class="row ml-5">
     <div class="col-10">
-       <%= render 'layouts/error_messages', resource: @genre %>
+      <%= render "layouts/error_messages", resource: @genre %>
       <%= form_with url: admin_genres_path, model: @genre, local: true do |f| %>
-        <table class="tab">
-          <td><%= f.label :name, 'ジャンル名', class: "mr-5" %></td>
-          <td><%= f.text_field :name, class: 'form-control' %></td>
-          <td><%= f.submit '追加する', class: 'btn btn-success ml-5' %></td>
-        </table>
+      <table>
+        <td><%= f.label :name, "ジャンル名", class: "mr-5" %></td>
+        <td><%= f.text_field :name, class: "form-control" %></td>
+        <td><%= f.submit "追加する", class: "btn btn-success ml-5" %></td>
+      </table>
        <% end %>
     </div>
   </div>
-  <div class="row ml-5 mt-5">
-    <div  class="col-5">
-      <table class="table table-hover table-inverse  mt-5" >
+  <div class="row ml-5 mt-4">
+    <div class="col-5">
+      <table class="table table-inverse" >
         <thead class="thead-light">
           <th>
             ジャンル
@@ -27,7 +27,7 @@
             <td>
               <%= genre.name %>
             </td>
-            <td align="center">
+            <td>
               <%= link_to "ジャンル編集",edit_admin_genre_path(genre), class: "btn btn-success" %>
             </td>
           </tr>
