@@ -1,27 +1,27 @@
-<div class="container-fluid">
-  <div class='row'>
-  <% posts.each do |post| %>
-    <div class="all_posts col-md-3 mt-2 pl-1" style=" border-radius: 10px;">
-      <div style="text-align:center;" class="mt-2">
-        <%= link_to post_path(post.id) do %>
-        <%= image_tag post.get_post_image, class: "rounded", size: '160x130' %>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <% posts.each do |post| %>
+      <div class="all_posts col-md-3 mt-2 px-2">
+        <div style="text-align:center;" class="mt-2">
+          <%= link_to post_path(post.id) do %>
+            <%= image_tag post.get_post_image, class: "rounded", size: "160x130" %>
+          <% end %>
+        </div>
+        <div style="text-align:center;">
+          <p><strong><%= post.title %></strong></p>
+          <p>ジャンル：<%= post.genre.name %></p>
+          <p>
+            <% post.tags.each do |tag|%>
+              #<%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %>
+              <%="(#{tag.posts.count})" %>
+            <% end %>
+          </p>
+          <p><i class="far fa-comments"></i> <%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
+        </div>
+        <p>投稿者:　<%= link_to post.user.nickname, user_path(post.user) %></p>
       </div>
-      <div style="text-align:center;">
-        <u><p><strong><%= post.title %></strong></p></u>
-        <p>ジャンル：<%= post.genre.name %></p>
-        <p>
-          <% post.tags.each do |tag|%>
-          #<%= link_to tag.name, search_tag_posts_path(tag_id: tag.id) %>
-          <%="(#{tag.posts.count})" %>
-        <% end %>
-        </p>
-        <p><i class="far fa-comments"></i> <%= post.post_comments.count %>コメント   　<%= render "public/favorites/btn", post: post %></p>
-      </div>
-      <p>投稿者:　<%= link_to post.user.nickname, user_path(post.user) %></p>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>
 
 
