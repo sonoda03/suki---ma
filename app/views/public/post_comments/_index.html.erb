@@ -14,7 +14,7 @@
         <td><%= post_comment.comment %></td>
         <td>
           <% if admin_signed_in? %>
-            <%= link_to "管理者削除", post_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull-right ml-5" %>
+            <%= link_to "管理者削除", post_post_comment_path(post, post_comment), method: :delete, class: "btn btn-danger pull-right ml-5", data: {confirm: "このコメントを削除しますか？"} %>
           <% end %>
         </td>
       </tbody>
