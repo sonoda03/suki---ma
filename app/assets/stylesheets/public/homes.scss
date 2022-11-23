@@ -1,3 +1,20 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.all_top{
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 960px;
+  height: 600px;
+  background-image: image-url("huusen.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.text_top{
+  padding: 20px;
+  text-align: center;
+  color: #fefefe;
+  background-color: rgba(105,105,105,0.5);
+}

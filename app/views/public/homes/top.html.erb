@@ -1,11 +1,15 @@
-<h1>Suki~~~maへようこそ！！</h1>
-<p>こちらのサイトでは、様々な短時間の休憩方法を共有することができます。</br>
-使いやすい＆自分に合った短時間の休憩方法を見つけて次の頑張りに繋げましょう!!
-</p>
-<% if user_signed_in? %>
+  <div class="all_top d-flex align-items-center justify-content-center">
+    <div class="text_top">
+      <h1>Suki---maへようこそ！！</h1>
+      <p>
+        </br>
+        <strong>こちらのサイトでは、様々な短時間の休憩方法を共有することができます。</strong>
+      </p>
+      <p>
+        <strong>使いやすい＆自分に合った短時間の休憩方法を見つけて次の頑張りに繋げましょう!!</strong>
+      </p>
+      </p>
+    </div>
+  </div>
 
-<% else %>
-  <%= link_to "ログイン", new_user_session_path, class: 'btn btn-info' %>
 
-  <%= link_to "新規会員登録", new_user_registration_path, class: 'btn btn-success' %>
-<% end %>
