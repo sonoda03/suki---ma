@@ -1,6 +1,9 @@
 ja:
   activerecord:
     attributes:
+      admin:
+        email: "メールアドレス"
+        current_password: "パスワード"
       user:
         email: "メールアドレス"
         last_name: "姓"
