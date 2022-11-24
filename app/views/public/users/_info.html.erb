@@ -8,10 +8,11 @@
         <%#= link_to user_path(user) do %>
           <%#= image_tag user.get_profile_image, size:"120x120" %>
         <%# end %>
+        <%= image_tag 'no_image_square.jpg', size: "200x200" %>
         <% if user.profile_image.attached? %>
 			    <%= image_tag user.profile_image, size: "200x200" %>
 			  <% else %>
-			    <%= image_tag '/images/no_image_square.jpg', size: "200x200" %>
+			    <%= image_tag 'no_image_square.jpg', size: "200x200" %>
 			  <% end %>
         </td>
       </tr>
