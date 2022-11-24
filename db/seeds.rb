@@ -133,7 +133,7 @@ Post.create!(
                       クラシックには「幸せホルモン」が出やすくなり、心が安定するばかりか、自尊心と自信をもって物事に取り組めるようになるそうです！！
                       今回紹介する曲は10分以内に終わりますし、上記の効果があるのでとってもおすすめです。',
       url: 'https://www.youtube.com/watch?v=PTr1v1ksWkQ',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post4.jpg"), filename: "sample-post4.jpg")
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
     },
     {
       user_id: 3,
@@ -143,32 +143,32 @@ Post.create!(
                     個人的には5曲目の「小さな妖精の丘、大きな妖精の丘」がおすすめ！！
                     ヒーリング楽器の原点ともいえるケルティック・ハープを聞いて頑張って疲れた心をリセットしませんか？？',
       url: 'https://item.rakuten.co.jp/healingplaza/dldh-1903/',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post5.jpg"), filename: "sample-post5.jpg")
-    },
-    {
-      user_id: 4,
-      genre_id: 6,
-      title: '',
-      introduction: '',
-      url: '',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post6.jpg"), filename: "sample-post6.jpg")
-    },
-    {
-      user_id: 4,
-      genre_id: 4,
-      title: '',
-      introduction: '',
-      url: '',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post7.jpg"), filename: "sample-post7.jpg")
-    },
-    {
-      user_id: 4,
-      genre_id: 4,
-      title: '',
-      introduction: '',
-      url: '',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post8.jpg"), filename: "sample-post8.jpg")
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
     }
+    # {
+    #   user_id: 4,
+    #   genre_id: 6,
+    #   title: '',
+    #   introduction: '',
+    #   url: '',
+    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post6.jpg"), filename: "sample-post6.jpg")
+    # },
+    # {
+    #   user_id: 4,
+    #   genre_id: 4,
+    #   title: '',
+    #   introduction: '',
+    #   url: '',
+    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post7.jpg"), filename: "sample-post7.jpg")
+    # },
+    # {
+    #   user_id: 4,
+    #   genre_id: 4,
+    #   title: '',
+    #   introduction: '',
+    #   url: '',
+    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post8.jpg"), filename: "sample-post8.jpg")
+    # }
   ]
 )
 
