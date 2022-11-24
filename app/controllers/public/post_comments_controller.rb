@@ -1,5 +1,5 @@
 class Public::PostCommentsController < ApplicationController
-  protect_from_forgery
+  # protect_from_forgery
    before_action :authenticate_user!, except: [:destroy]
 
   def create
