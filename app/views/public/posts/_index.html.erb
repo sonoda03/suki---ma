@@ -4,7 +4,11 @@
       <div class="all_posts col-md-3 mt-2 px-2">
         <div style="text-align:center;" class="mt-2">
           <%= link_to post_path(post.id) do %>
-            <%= image_tag post.get_post_image, class: "rounded", size: "160x130" %>
+            <% if post.post_image.attached? %>
+    			    <%= image_tag post.post_image, size: "120x120" %>
+    			  <% else %>
+    			    <%= image_tag 'no_image_square.jpg', size: "120x120" %>
+    			  <% end %>
           <% end %>
         </div>
         <div style="text-align:center;">

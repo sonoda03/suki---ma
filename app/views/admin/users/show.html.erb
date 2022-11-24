@@ -13,7 +13,11 @@
 			<p>　プロフィール画像</br>
 			 （ほかユーザに公開）
 			</p>
-			<%= image_tag @user.get_profile_image, size: "200x200" %>
+			<% if @user.profile_image.attached? %>
+			  <%= image_tag @user.profile_image, size: "2000x200" %>
+			<% else %>
+			  <%= image_tag 'no_image_square.jpg', size: "200x200" %>
+			<% end %>
 		</div>
 		<div class="col-8">
 			<table class="table table-borderless">
