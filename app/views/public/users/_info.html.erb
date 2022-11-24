@@ -5,6 +5,7 @@
     <table class="table table-borderless">
       <tr>
         <td align=center>
+
         <%= link_to user_path(user) do %>
           <% if user.profile_image.attached? %>
   			    <%= image_tag user.profile_image, size: "120x120" %>
@@ -33,7 +34,10 @@
     </div>
     <% else %>
       <div>
-    	  <p align=center><img src="/assets/no_image_square.jpg" , width="120" height="120"></p>
+    	  <p align=center>
+    	    <!--<img src="/assets/no_image_square.jpg" , width="120" height="120">-->
+    	    <%= image_tag 'no_image_square.jpg', size: "120x120" %>
+    	   </p>
         <p align=center>
           <strong>
     	      会員登録または<br>
