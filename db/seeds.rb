@@ -12,16 +12,6 @@ Admin.create!(
   password: 'password'
 )
 
-Genre.create!(
-  [
-    {name: '本'},
-    {name: '音楽'},
-    {name: '動画'},
-    {name: '食べ物'},
-    {name: 'その他'}
-  ]
-)
-
 User.create!(
   [
     {
@@ -48,4 +38,66 @@ User.create!(
     }
   ]
 )
+
+Genre.create!(
+  [
+    {name: '本'},
+    {name: '音楽'},
+    {name: '動画'},
+    {name: '食べ物'},
+    {name: 'その他'}
+  ]
+)
+
+# Tag.create!(
+#   [
+#     {name: '10分'},
+#     {name: 'クラシック'},
+#     {name: 'テンションアップ'},
+#     {name: '5分'},
+#     {name: '甘い'},
+#     {name: 'スイーツ'}
+#   ]
+# )
+
+# PostTag.create!(
+#   [
+#     {post_id: 1, tag_id: 1},
+#     {post_id: 1, tag_id: 2},
+#     {post_id: 1, tag_id: 3},
+#     {post_id: 2, tag_id: 4},
+#     {post_id: 2, tag_id: 5},
+#     {post_id: 2, tag_id: 6},
+#     {post_id: 2, tag_id: 3},
+#   ]
+# )
+
+
+Post.create!(
+  [
+    {
+      user_id: 1,
+      genre_id: 2,
+      title: 'ジャジャジャジャーン',
+      introduction: 'ベートーベン『運命』交響曲第五番第一楽章です。疲れててもこれを聞くとテンションがあがりますよ！！',
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename: "sample-post1.jpg"),
+      url: 'https://www.youtube.com/watch?v=PTr1v1ksWkQ'
+    },
+    {
+      user_id: 2,
+      genre_id: 4,
+      title: 'ひとくちシュークリーム',
+      introduction: 'たった一口終わってしまうシュークリームケーキ！！気分転換にピッタリ',
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename: "sample-post2.jpg"),
+      url: 'https://www.youtube.com/watch?v=PTr1v1ksWkQ'
+    }
+  ]
+)
+
+Favorite.create!(
+  [
+    {user_id: 1, post_id: 2}
+  ]
+)
+
 
