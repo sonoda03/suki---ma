@@ -8,10 +8,6 @@ class Post < ApplicationRecord
 
   has_one_attached :post_image
 
-  # def get_post_image
-  #   (post_image.attached?) ? post_image : '/assets/no_image_square.jpg'
-  # end
-
   validates :title, presence: true
   validates :introduction, presence: true, length: { maximum: 300 }
 
