@@ -9,7 +9,7 @@
 # 管理者ログイン用メールアドレス・パスワード
 Admin.create!(
   email: 'admin@admin.com',
-  password: 'password1'
+  password: 'password'
 )
 
 Genre.create!(
