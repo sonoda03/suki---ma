@@ -117,13 +117,13 @@ Post.create!(
     {
       user_id: 2,
       genre_id: 1,
-      title: '【にやにやなっちゃう】癒されるどうぶつの赤ちゃんBOOK',
+      title: '【にやにやなっちゃう】癒されるどうぶつの赤ちゃん',
       introduction: 'つらい日々も癒しがあれば乗り越えられる…。
                     癒しといえば動物、その中でも動物の赤ちゃんは癒しのカタマリ！！
-                    表紙から癒しが溢れています！！1ページ１ページ内容が短いので区切りがよく、ちょっとした休憩にピッタリ',
+                    下記URLで紹介している本では、表紙から癒しが溢れています！！1ページ１ページ内容が短いので区切りがよく、ちょっとした休憩にピッタリ',
       url: 'https://books.rakuten.co.jp/rb/16940363/?l-id=c-recommend-toho-reco&rtg=784ed239a29dbe5cc8045bf186a77e80',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
-    },
+    } ,
     {
       user_id: 3,
       genre_id: 3,
@@ -133,7 +133,7 @@ Post.create!(
                       クラシックには「幸せホルモン」が出やすくなり、心が安定するばかりか、自尊心と自信をもって物事に取り組めるようになるそうです！！
                       今回紹介する曲は10分以内に終わりますし、上記の効果があるのでとってもおすすめです。',
       url: 'https://www.youtube.com/watch?v=PTr1v1ksWkQ',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post4.jpg"), filename: "sample-post4.jpg")
     },
     {
       user_id: 3,
@@ -142,33 +142,43 @@ Post.create!(
       introduction: 'ヒーリング楽器の原点ともいえるケルティック・ハープを、アイルランドにて新規オリジナル・レコーディングしたCDです。
                     個人的には5曲目の「小さな妖精の丘、大きな妖精の丘」がおすすめ！！
                     ヒーリング楽器の原点ともいえるケルティック・ハープを聞いて頑張って疲れた心をリセットしませんか？？',
-      url: 'https://item.rakuten.co.jp/healingplaza/dldh-1903/',
-      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
+      url: 'https://item.rakuten.co.jp/healingplaza/dldh-1903/' ,
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post5.jpg"), filename: "sample-post5.jpg")
+    },
+    {
+      user_id: 4,
+      genre_id: 4,
+      title: 'ひとくちドーナツ',
+      introduction: '懐かしい味で、気軽に食べれるミニサイズ!甘いものを食べて元気を出しましょう！
+                      一口なので量も調整できます。
+                      僕のおすすめは勉強をする前にあらかじめ休憩（5～10分）で食べていい数量を用意しておくのがポイントです！
+                      おすすめ商品URLを下記に貼っときますね！',
+      url: 'https://item.rakuten.co.jp/tennenlife/10557/#10557',
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post6.jpg"), filename: "sample-post6.jpg")
+    },
+    {
+      user_id: 4,
+      genre_id: 4,
+      title: 'ひとくちミックスゼリー♡',
+      introduction: '気軽に食べれるミニサイズ!甘いものを食べて元気を出しましょう！色とりどりのゼリー…気分によってどれを食べるか迷ってしまいます！
+                      一口なので量も調整できます。
+                      僕のおすすめは勉強をする前にあらかじめ休憩（5～10分）で食べていい数量を用意しておくのがポイントです！
+                      おすすめ商品URLを下記に貼っときますね！',
+      url: 'https://item.rakuten.co.jp/nipponselect/t01750006/',
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post7.jpg"), filename: "sample-post7.jpg")
+    },
+    {
+      user_id: 5,
+      genre_id: 5,
+      title: '首がこったらこのツボ',
+      introduction: '仕事や職場の様々な場面に応用できるツボ押し。日々頑張ったりしていると首がこったりしますよね。
+                    ちょっとした休憩時に手にある「頸頂点（ケイチョウテン）」を押すといいですよ！
+                    「頸頂点」は、両手の甲側にあり、中指と人差し指の間から約２㎝手首に向かって下がった少しへこんだところが目安。
+                    親指でゆっくり５秒押さえ揉みほぐすのを交互に繰り返すといいです！
+                    リフレッシュできるだけでなく、首のこりにもきくのでおすすめです！！',
+      url: '' ,
+      post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post8.jpg"), filename: "sample-post8.jpg")
     }
-    # {
-    #   user_id: 4,
-    #   genre_id: 6,
-    #   title: '',
-    #   introduction: '',
-    #   url: '',
-    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post6.jpg"), filename: "sample-post6.jpg")
-    # },
-    # {
-    #   user_id: 4,
-    #   genre_id: 4,
-    #   title: '',
-    #   introduction: '',
-    #   url: '',
-    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post7.jpg"), filename: "sample-post7.jpg")
-    # },
-    # {
-    #   user_id: 4,
-    #   genre_id: 4,
-    #   title: '',
-    #   introduction: '',
-    #   url: '',
-    #   post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post8.jpg"), filename: "sample-post8.jpg")
-    # }
   ]
 )
 
