@@ -183,9 +183,6 @@ Post.create!(
 )
 
 
-
-
-
 Tag.create!(
   [
     {name: 'ストレッチ'},
@@ -256,6 +253,28 @@ PostTag.create!(
   ]
 )
 
+PostComment.create!(
+  [
+    {
+      user_id: 4,
+      post_id: 1,
+      comment: '紹介しているように自宅でやるのがいいのですね。
+                とくに私は頑張っていると体に力が入るようで、疲れやすいです。
+                そんな私にこのストレッチはとてもよくきくので気に入っています',
+    },
+    {
+      user_id: 3,
+      post_id: 1,
+      comment: '短めなので小休憩のときに紹介していただいた動画重宝しています。',
+    },
+    {
+      user_id: 7,
+      post_id: 1,
+      comment: 'ゼリーはお腹が膨れるのでダイエットにもいいですよね。食べすぎには注意しないとですね',
+    },
+  ]
+)
+
 Favorite.create!(
   [
     {user_id: 1, post_id: 3},
@@ -283,5 +302,4 @@ Favorite.create!(
     {user_id: 6, post_id: 3}
   ]
 )
-
 
