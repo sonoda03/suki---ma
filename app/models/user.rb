@@ -19,7 +19,6 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
-
   def self.guest
     find_or_create_by!(email: 'guest0123@example.com') do |user|
       user.last_name = '閲覧'
