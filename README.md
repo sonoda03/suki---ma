@@ -1,5 +1,7 @@
 # SUKI---MA
 
+<img src="https://user-images.githubusercontent.com/111563330/204043382-29bed572-6494-45ac-8584-eaad35ec0444.png" width="320px">
+※ロゴ画像（自作です）
 ## サイト概要
 
 ### サイトテーマ
