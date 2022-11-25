@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .all_top{
   margin: 0 auto;
-  width: 960px;
-  height: 700px;
-  background-image: image-url("huusen.jpg");
+  width: 100%;
+  min-height: 100vh;
+  background-image: image-url("top.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
