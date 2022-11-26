@@ -53,6 +53,13 @@ ER図↓
 テーブル定義書
 https://docs.google.com/spreadsheets/d/19nihCyDDAnc7cIBQAWfU4xYZTmeHqwUtyTSDFmyfYmc/edit?usp=sharing
 
+## 管理者用アカウント
+
+- mail: 'admin@admin.comm'
+- password: 'password'
+- URLは後ろに「 /admin/sign_in 」と入力
+
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
