@@ -60,5 +60,13 @@ https://docs.google.com/spreadsheets/d/19nihCyDDAnc7cIBQAWfU4xYZTmeHqwUtyTSDFmyf
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
+
+## gem一覧
+- ログイン機能: gem 'devise'
+- URL投稿機能: gem 'rinku'
+- 検索機能: gem 'ransack' 
+- バリデーション日本語化: gem 'rails-i18n'
+- ページネーション機能: gem 'kaminari','~> 1.2.1'
+
 ## 使用素材
 - PhotoAC様 https://www.photo-ac.com/
