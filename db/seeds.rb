@@ -8,7 +8,7 @@
 
 # 管理者ログイン用メールアドレス・パスワード
 Admin.create!(
-  email: 'admin@admin.com',
+  email: 'admin@admin.comm',
   password: 'password'
 )
 
@@ -16,7 +16,7 @@ Admin.create!(
 User.create!(
   [
     {
-      email: 'sukima01@test.com',
+      email: 'sukima01@test.comm',
       last_name: '平成',
       first_name: '平子',
       first_name_kana: 'ヘイセイ',
@@ -27,7 +27,7 @@ User.create!(
       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user1.jpg"), filename: "sample-user1.jpg"),
     },
     {
-      email: 'sukima02@test.com',
+      email: 'sukima02@test.comm',
       last_name: '大正',
       first_name: '大太郎',
       first_name_kana: 'タイショウ',
@@ -38,7 +38,7 @@ User.create!(
       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user2.jpg"), filename: "sample-user2.jpg"),
     },
     {
-      email: 'sukima03@test.com',
+      email: 'sukima03@test.comm',
       last_name: '令和',
       first_name: '令介',
       first_name_kana: 'レイワ',
@@ -49,7 +49,7 @@ User.create!(
       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user3.jpg"), filename: "sample-user3.jpg"),
     },
     {
-      email: 'sukima04@test.com',
+      email: 'sukima04@test.comm',
       last_name: '昭和',
       first_name: '昭次郎',
       first_name_kana: 'ショウワ',
@@ -60,7 +60,7 @@ User.create!(
       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user4.jpg"), filename: "sample-user4.jpg"),
     },
     {
-      email: 'sukima05@test.com',
+      email: 'sukima05@test.comm',
       last_name: '明治',
       first_name: '明代',
       first_name_kana: 'メイジ',
@@ -71,7 +71,7 @@ User.create!(
       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user5.jpg"), filename: "sample-user5.jpg"),
     },
     {
-      email: 'sukima06@test.com',
+      email: 'sukima06@test.comm',
       last_name: '大化',
       first_name: 'たい夫',
       first_name_kana: 'タイカ',
@@ -84,6 +84,7 @@ User.create!(
   ]
 )
 
+# ジャンル
 Genre.create!(
   [
     {name: '本'},
@@ -95,6 +96,7 @@ Genre.create!(
   ]
 )
 
+# 投稿
 Post.create!(
   [
     {
@@ -102,7 +104,7 @@ Post.create!(
       genre_id: 5,
       title: '！疲れがとれる6分間ストレッチ！',
       introduction: 'とくに自宅で仕事や勉強をしている方におすすめ！床に座って行うストレッチなのである程度空間が必要です。',
-      url: 'https://www.youtube.com/watch?v=Re2MmgYe01A',
+      url: 'https://stretch_douga_tukaresayonara.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename: "sample-post1.jpg")
     },
     {
@@ -121,7 +123,7 @@ Post.create!(
       introduction: 'つらい日々も癒しがあれば乗り越えられる…。
                     癒しといえば動物、その中でも動物の赤ちゃんは癒しのカタマリ！！
                     下記URLで紹介している本では、表紙から癒しが溢れています！！1ページ１ページ内容が短いので区切りがよく、ちょっとした休憩にピッタリ',
-      url: 'https://books.rakuten.co.jp/rb/16940363/?l-id=c-recommend-toho-reco&rtg=784ed239a29dbe5cc8045bf186a77e80',
+      url: 'https://animal_baby_books.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename: "sample-post3.jpg")
     } ,
     {
@@ -132,7 +134,7 @@ Post.create!(
                       誰もが知っているベートーベン『運命』交響曲第五番第一楽章。
                       クラシックには「幸せホルモン」が出やすくなり、心が安定するばかりか、自尊心と自信をもって物事に取り組めるようになるそうです！！
                       今回紹介する曲は10分以内に終わりますし、上記の効果があるのでとってもおすすめです。',
-      url: 'https://www.youtube.com/watch?v=PTr1v1ksWkQ',
+      url: 'https://unmei_douga_classic.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post4.jpg"), filename: "sample-post4.jpg")
     },
     {
@@ -142,7 +144,7 @@ Post.create!(
       introduction: 'ヒーリング楽器の原点ともいえるケルティック・ハープを、アイルランドにて新規オリジナル・レコーディングしたCDです。
                     個人的には5曲目の「小さな妖精の丘、大きな妖精の丘」がおすすめ！！
                     ヒーリング楽器の原点ともいえるケルティック・ハープを聞いて頑張って疲れた心をリセットしませんか？？',
-      url: 'https://item.rakuten.co.jp/healingplaza/dldh-1903/' ,
+      url: 'https://celt_harp_iyasi.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post5.jpg"), filename: "sample-post5.jpg")
     },
     {
@@ -153,7 +155,7 @@ Post.create!(
                       一口なので量も調整できます。
                       僕のおすすめは勉強をする前にあらかじめ休憩（5～10分）で食べていい数量を用意しておくのがポイントです！
                       おすすめ商品URLを下記に貼っときますね！',
-      url: 'https://item.rakuten.co.jp/tennenlife/10557/#10557',
+      url: 'https://hitokuti_donut.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post6.jpg"), filename: "sample-post6.jpg")
     },
     {
@@ -164,7 +166,7 @@ Post.create!(
                       一口なので量も調整できます。
                       僕のおすすめは勉強をする前にあらかじめ休憩（5～10分）で食べていい数量を用意しておくのがポイントです！
                       おすすめ商品URLを下記に貼っときますね！',
-      url: 'https://item.rakuten.co.jp/nipponselect/t01750006/',
+      url: 'https://hitokuti_jelly_colorful.test.co.jp',
       post_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post7.jpg"), filename: "sample-post7.jpg")
     },
     {
@@ -182,7 +184,7 @@ Post.create!(
   ]
 )
 
-
+# タグ
 Tag.create!(
   [
     {name: 'ストレッチ'},
@@ -210,6 +212,7 @@ Tag.create!(
   ]
 )
 
+# 投稿とタグの中間テーブル
 PostTag.create!(
   [
     {post_id: 1, tag_id: 1},
@@ -253,6 +256,7 @@ PostTag.create!(
   ]
 )
 
+# 投稿に対するコメント
 PostComment.create!(
   [
     {
@@ -265,16 +269,17 @@ PostComment.create!(
     {
       user_id: 3,
       post_id: 1,
-      comment: '短めなので小休憩のときに紹介していただいた動画重宝しています。',
+      comment: '短めなので小休憩のときに紹介していただいた動画を重宝しています。',
     },
     {
-      user_id: 7,
-      post_id: 1,
+      user_id: 1,
+      post_id: 7,
       comment: 'ゼリーはお腹が膨れるのでダイエットにもいいですよね。食べすぎには注意しないとですね',
-    },
+    }
   ]
 )
 
+# 投稿に対するお気に入り（ブックマーク）
 Favorite.create!(
   [
     {user_id: 1, post_id: 3},
