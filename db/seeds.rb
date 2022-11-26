@@ -84,6 +84,7 @@ User.create!(
   ]
 )
 
+# ジャンル
 Genre.create!(
   [
     {name: '本'},
@@ -95,6 +96,7 @@ Genre.create!(
   ]
 )
 
+# 投稿
 Post.create!(
   [
     {
@@ -182,7 +184,7 @@ Post.create!(
   ]
 )
 
-
+# タグ
 Tag.create!(
   [
     {name: 'ストレッチ'},
@@ -210,6 +212,7 @@ Tag.create!(
   ]
 )
 
+# 投稿とタグの中間テーブル
 PostTag.create!(
   [
     {post_id: 1, tag_id: 1},
@@ -253,6 +256,7 @@ PostTag.create!(
   ]
 )
 
+# 投稿に対するコメント
 PostComment.create!(
   [
     {
@@ -271,10 +275,11 @@ PostComment.create!(
       user_id: 7,
       post_id: 1,
       comment: 'ゼリーはお腹が膨れるのでダイエットにもいいですよね。食べすぎには注意しないとですね',
-    },
+    }
   ]
 )
 
+# 投稿に対するお気に入り（ブックマーク）
 Favorite.create!(
   [
     {user_id: 1, post_id: 3},
