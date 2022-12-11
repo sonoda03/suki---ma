@@ -50,7 +50,7 @@ ER図↓
 
 <img src="https://user-images.githubusercontent.com/111563330/204078028-1d6db164-925d-47e9-9364-4f68d10f934b.jpg" width="750px">
 
-テーブル定義書
+テーブル定義書↓
 https://docs.google.com/spreadsheets/d/19nihCyDDAnc7cIBQAWfU4xYZTmeHqwUtyTSDFmyfYmc/edit?usp=sharing
 
 ## 管理者用アカウント
