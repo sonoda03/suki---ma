@@ -76,4 +76,4 @@ https://docs.google.com/spreadsheets/d/19nihCyDDAnc7cIBQAWfU4xYZTmeHqwUtyTSDFmyf
 - ページネーション機能: gem 'kaminari','~> 1.2.1'
 
 ## 使用素材
-- PhotoAC様 https://www.photo-ac.com/
+- PhotoAC様 https://www.photo-ac.com
