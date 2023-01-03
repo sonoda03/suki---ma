@@ -1,6 +1,6 @@
 # SUKI---MA
 
-<img src="https://user-images.githubusercontent.com/111563330/204043382-29bed572-6494-45ac-8584-eaad35ec0444.png" width="220px">
+<img src="https://user-images.githubusercontent.com/111563330/204043382-29bed572-6494-45ac-8584-eaad35ec0444.png" width="210px">
 
 　　＜ロゴ画像＞</br>
 隙間（スキマ）時間に挟まれたスキ－－－マくん
