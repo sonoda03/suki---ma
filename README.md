@@ -57,7 +57,7 @@ https://docs.google.com/spreadsheets/d/19nihCyDDAnc7cIBQAWfU4xYZTmeHqwUtyTSDFmyf
 
 - mail: 'admin@admin.comm'
 - password: 'password'
-- URLは後ろに「 /admin/sign_in 」と入力
+- URLは後ろに「 /admin/sign_in 」と入力してください
 
 
 ## 開発環境
